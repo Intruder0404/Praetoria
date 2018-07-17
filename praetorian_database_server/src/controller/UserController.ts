@@ -12,6 +12,11 @@ export class UserController {
   constructor() {
         this.userRepository = getConnectionManager().get().getRepository(User);
     }
+
+  @Get("/addUser")
+  getUser(@EntityFromParam("id") user: User){
+    return user;
+  }
   @Get("/getUser/:id")
   getUser(@EntityFromParam("id") user: User){
     return user;
