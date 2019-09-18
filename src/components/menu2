@@ -1,0 +1,52 @@
+import React, { useState, useEffect } from 'react';
+import { withStyles,WithStyles,Theme,Toolbar,AppBar,Button } from '@material-ui/core';
+import {useRoutes} from 'hookrouter';
+import Router from '../components/router';
+import history from 'history';
+// make sure you include the timeline stylesheet or the timeline will not be styled
+const styles = {
+  Menu: {
+    width: '100%',
+	height:'200px',
+	margin:'0',
+    backgroundColor: 'purple',
+  },
+  title: {
+	  position:'relative' as 'relative',
+	  top:'50%'
+  }
+};
+
+
+type ClassNames = { classes: {[className in keyof typeof styles]:string}}
+
+const handleOnClick_navigateTo = (url : string): void =>{
+	history.push(url);
+}
+
+const Menu = (props : ClassNames) => {
+	const routeResult = Router;
+	//const [title,setTitle] = useState('Praetoria');
+	const{ classes } = props;
+	
+	useEffect(()=>{
+		//alert('allo');
+	})
+	
+	return(
+		<AppBar>
+			<Toolbar>
+
+				/*<Button onClick = {() => handleOnClick_navigateTo('/')}>Legion</Button>
+				<Button onClick = {() => handleOnClick_navigateTo('/')}>Familles</Button>
+				<Button onClick = {() => handleOnClick_navigateTo('/')}>Campement</Button>
+				<Button onClick = {() => handleOnClick_navigateTo('/')}>Forum</Button>
+				<Button onClick = {() => handleOnClick_navigateTo('/')}>Espace Personel</Button>
+				<Button onClick = {() => handleOnClick_navigateTo('/')}>Varia</Button>
+			</Toolbar>*/
+		</AppBar>
+	);
+	
+}
+
+export default withStyles( styles )( Menu );
