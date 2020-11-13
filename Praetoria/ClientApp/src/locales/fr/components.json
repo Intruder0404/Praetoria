@@ -1,0 +1,30 @@
+{
+    "serialNumberGen": {
+        "woRequired": "Un bon de travail est requis !",
+        "clientRequired": "Un client est requis !",
+        "clientLength": "Un client nécessite 4 caractères !",
+        "workOrder": "Bon de travail",
+        "client": "Client (4 Caractères)",
+        "generateSerialNumber": "Générer un numéro de série",
+        "clientCompleteDate": "La Date Entré est Vide"
+    },
+    "serialNumberListAll": {
+        "serialNumbersView": "Numéros de série"
+    },
+    "serialNumberTableHead": {
+        "client": "Client",
+        "workOrder": "Bon de travail",
+        "projectNumber": "Numéro de projet",
+        "serialNumber": "Numéro de série",
+        "creationDate": "Date de création",
+        "actions": "Actions"
+    },
+    "serialNumberView": {
+        "copiedToClipboard": "Copié dans le presse-papier !",
+        "serialNumber": "Numéro de Série",
+        "copy": "Copier"
+    },
+    "SerialNumberTableBodyRow": {
+        "updatedSuccessfully": "Mis à jour avec succès!"
+    }
+}

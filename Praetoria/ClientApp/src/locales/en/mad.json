@@ -1,0 +1,5 @@
+{
+    "generatedThe": "Generated the : {{serialNumberGenerationMessage}}",
+    "alreadyGeneratedThe": "Already generated the : {{serialNumberGenerationMessage}}",
+    "alreadyGeneratedWithOtherClient": "Already generated with other client : {{serialNumberGenerationMessage}}"
+}

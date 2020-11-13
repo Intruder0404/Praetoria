@@ -1,0 +1,30 @@
+{
+    "serialNumberGen": {
+        "woRequired": "A work order is required!",
+        "clientRequired": "A client is required!",
+        "clientLength": "A client requires 4 characters!",
+        "workOrder": "Work Order",
+        "client": "Client (4 Characters)",
+        "generateSerialNumber": "Generate the serial number",
+        "clientCompleteDate": "Date Entered Is Empty"
+    },
+    "serialNumberListAll": {
+        "serialNumbersView": "Serial Numbers"
+    },
+    "serialNumberTableHead": {
+        "client": "Client",
+        "workOrder": "Work Order",
+        "projectNumber": "Project Number",
+        "serialNumber": "Serial Number",
+        "creationDate": "Creation Date",
+        "actions": "Actions"
+    },
+    "serialNumberView": {
+        "copiedToClipboard": "Copied to clipboard!",
+        "serialNumber": "Serial Number",
+        "copy": "Copy"
+    },
+    "SerialNumberTableBodyRow": {
+        "updatedSuccessfully": "Updated Successfully!"
+    }
+}
