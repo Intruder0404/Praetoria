@@ -29,6 +29,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/guilde', function () {
+        return view('guilde');
+    })->name('guilde');
+
+    Route::get('/familles', function () {
+        return view('familles');
+    })->name('familles');
+
     Route::get('/test', function () {
         return view('test');
     })->name('test');
