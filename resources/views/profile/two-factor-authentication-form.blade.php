@@ -1,14 +1,18 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Two Factor Authentication') }}
+        <div class="text-violet-200">
+            {{ __('Two Factor Authentication') }}
+        </div>
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Add additional security to your account using two factor authentication.') }}
+        <div class="text-violet-200">
+            {{ __('Add additional security to your account using two factor authentication.') }}
+        </div>
     </x-slot>
 
     <x-slot name="content">
-        <h3 class="text-lg font-medium text-gray-900">
+        <h3 class="text-lg font-medium text-gray-900 ">
             @if ($this->enabled)
                 @if ($showingConfirmation)
                     {{ __('Finish enabling two factor authentication.') }}
@@ -20,7 +24,7 @@
             @endif
         </h3>
 
-        <div class="mt-3 max-w-xl text-sm text-gray-600">
+        <div class="mt-3 max-w-xl text-sm text-gray-600 ">
             <p>
                 {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
             </p>
@@ -52,8 +56,8 @@
                     <div class="mt-4">
                         <x-jet-label for="code" value="{{ __('Code') }}" />
 
-                        <x-jet-input id="code" type="text" name="code" class="block mt-1 w-1/2" inputmode="numeric" autofocus autocomplete="one-time-code"
-                            wire:model.defer="code"
+                        <x-jet-input id="code" type="text" name="code" class="block mt-1 w-1/2"
+                            inputmode="numeric" autofocus autocomplete="one-time-code" wire:model.defer="code"
                             wire:keydown.enter="confirmTwoFactorAuthentication" />
 
                         <x-jet-input-error for="code" class="mt-2" />
@@ -77,7 +81,7 @@
         @endif
 
         <div class="mt-5">
-            @if (! $this->enabled)
+            @if (!$this->enabled)
                 <x-jet-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-jet-button type="button" wire:loading.attr="disabled">
                         {{ __('Enable') }}

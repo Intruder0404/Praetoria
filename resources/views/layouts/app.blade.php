@@ -25,6 +25,8 @@
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
+    <link rel="stylesheet" href="{{URL::asset('css/template.css')}}" />
+
 
     <!-- Styles -->
     @livewireStyles
@@ -33,12 +35,12 @@
 <body class="font-sans antialiased" >
     <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-violet-500">
         @livewire('navigation-menu')
 
         <!-- Page Heading -->
         @if (isset($header))
-            <header class="bg-white shadow">
+            <header class="bg-white bg-yellow-400 shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
@@ -46,7 +48,7 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main >
             {{ $slot }}
         </main>
     </div>

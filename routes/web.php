@@ -20,7 +20,6 @@ Route::get('/', function () {
 
 Route::get('/react', function () {
     return view('react');
-
 });
 
 Route::get('/news', function () {
@@ -59,5 +58,23 @@ Route::middleware([
     Route::post('/calendar/create', [CalendarController::class, 'create'])->name('calendar-create');
     Route::post('/calendar/update', [CalendarController::class, 'update'])->name('calendar-update');
     Route::post('/calendar/delete', [CalendarController::class, 'destroy'])->name('calendar-destroy');
+});
 
+Route::prefix('familles')->group(function(){
+
+    Route::get('/', function () {
+        return view('pages.global.familles');
+    })->name('familles');
+    Route::get('/octavii', function () {
+        return view('pages.global.familles');
+    })->name('octavii');
+    Route::get('/scipii', function () {
+        return view('pages.global.familles');
+    })->name('scipii');
+    Route::get('/rapax', function () {
+        return view('pages.global.familles');
+    })->name('rapax');
+    Route::get('/fortii', function () {
+        return view('pages.global.familles');
+    })->name('fortii');
 });
