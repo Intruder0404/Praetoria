@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.global.welcome');
+})->name('welcome');
+
 Route::get('/react', function () {
     return view('react');
+
 });
+
+Route::get('/news', function () {
+    return view('pages.global.news');
+})->name('news');
+
+Route::get('/guilde', function () {
+    return view('pages.global.guilde');
+})->name('guilde');
+
+Route::get('/familles', function () {
+    return view('pages.global.familles');
+})->name('familles');
+
+Route::get('/forum', function () {
+    return view('pages.global.forum');
+})->name('forum');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,18 +45,19 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('pages.member.dashboard');
     })->name('dashboard');
 
-    Route::get('/guilde', function () {
-        return view('guilde');
-    })->name('guilde');
+    /*Route::get('/calendar', [CalenderController::class, 'index']) {
+        return view('pages.member.calendar');
+    })->name('calendar');*/
 
-    Route::get('/familles', function () {
-        return view('familles');
-    })->name('familles');
+    Route::get('/events', function () {
+        return view('pages.member.events');
+    })->name('events');
+    Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
+    Route::post('/calendar/create', [CalendarController::class, 'create'])->name('calendar-create');
+    Route::post('/calendar/update', [CalendarController::class, 'update'])->name('calendar-update');
+    Route::post('/calendar/delete', [CalendarController::class, 'destroy'])->name('calendar-destroy');
 
-    Route::get('/test', function () {
-        return view('test');
-    })->name('test');
 });
