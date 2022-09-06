@@ -25,30 +25,29 @@
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="{{URL::asset('css/template.css')}}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/template.css') }}" />
 
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased" >
+<body class="font-sans antialiased">
     <x-jet-banner />
 
     <div class="min-h-screen bg-violet-500">
-        @livewire('navigation-menu')
+        @livewire('header.site-header')
 
         <!-- Page Heading -->
         @if (isset($header))
-            <header class="bg-white bg-yellow-400 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
+            <header class=" bg-yellow-400 shadow">
+                @livewire('header.site-header-images')
+                @livewire('header.site-header-navigator')
             </header>
         @endif
 
         <!-- Page Content -->
-        <main >
+        <main>
             {{ $slot }}
         </main>
     </div>
