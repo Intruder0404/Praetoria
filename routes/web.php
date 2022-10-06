@@ -47,21 +47,34 @@ Route::middleware([
         return view('pages.member.dashboard');
     })->name('dashboard');
 
-    /*Route::get('/calendar', [CalenderController::class, 'index']) {
-        return view('pages.member.calendar');
-    })->name('calendar');*/
 
     Route::get('/events', function () {
         return view('pages.member.events');
     })->name('events');
-    Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
-    Route::post('/calendar/create', [CalendarController::class, 'create'])->name('calendar-create');
-    Route::post('/calendar/update', [CalendarController::class, 'update'])->name('calendar-update');
-    Route::post('/calendar/delete', [CalendarController::class, 'destroy'])->name('calendar-destroy');
+    Route::prefix('calendar')->group(function(){
+        Route::get('/', [CalendarController::class, 'index'])->name('calendar');
+        Route::post('/create', [CalendarController::class, 'create'])->name('calendar-create');
+        Route::post('/update', [CalendarController::class, 'update'])->name('calendar-update');
+        Route::post('/delete', [CalendarController::class, 'destroy'])->name('calendar-destroy');
+    });
+
+    Route::prefix('administration')->group(function(){
+        Route::get('/', function () {
+            return view('pages.member.admin.administration');
+        })->name('administration');
+        Route::get('/familles', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.familles');
+        Route::get('/guilde', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.guilde');
+        Route::get('/users', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.users');
+    });
 });
 
 Route::prefix('familles')->group(function(){
-
     Route::get('/', function () {
         return view('pages.global.familles');
     })->name('familles');
@@ -77,4 +90,19 @@ Route::prefix('familles')->group(function(){
     Route::get('/fortii', function () {
         return view('pages.global.familles');
     })->name('fortii');
+});
+
+Route::prefix('guild')->group(function(){
+    Route::get('/', function () {
+        return view('pages.global.guilde');
+    })->name('guild');
+    Route::get('/description', function () {
+        return view('pages.global.guilde');
+    })->name('description');
+    Route::get('/politicalsystem', function () {
+        return view('pages.global.guilde');
+    })->name('politicalsystem');
+    Route::get('/location', function () {
+        return view('pages.global.guilde');
+    })->name('location');
 });

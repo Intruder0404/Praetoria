@@ -11,7 +11,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
 
-<div id="praetorianCarousel" class="carousel slide" data-ride="carousel">
+<div id="praetorianCarousel" class="carousel slide bg-violet-900 max-w-7xl mx-auto sm:px-6 lg:px-8" data-ride="carousel">
     <ol class="carousel-indicators">
         @foreach (File::glob(public_path('images/carousel') . '/*') as $image)
             @if ($loop->index === 1)
@@ -20,7 +20,6 @@
                 <li data-target="#praetorianCarousel" data-slide-to="{{ $loop->index }}"></li>
             @endIf
         @endforeach
-
     </ol>
     <div class="carousel-inner" style="height:360px;">
         @foreach (File::glob(public_path('images/carousel') . '/*') as $image)
@@ -29,14 +28,14 @@
                     <img src="{{ str_replace(public_path(), '', $image) }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption">
-                  <h3>Legio Praetoria</h3>
+                    <h1 class=" text-yellow-500">Legio Praetoria</h1>
                 </div>
             @else
-                <div class="carousel-item"  style="top:-360px;">
+                <div class="carousel-item" style="top:-360px;">
                     <img src="{{ str_replace(public_path(), '', $image) }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-caption">
-                  <h3>Legio Praetoria</h3>
+                    <h1 class=" text-yellow-500">Legio Praetoria</h1>
                 </div>
             @endIf
         @endforeach

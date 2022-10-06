@@ -26,22 +26,26 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
 
     <link rel="stylesheet" href="{{ URL::asset('css/template.css') }}" />
+    <link rel="icon" href="{{ url('images/logo/praetoria-1-transparent.png') }}">
 
 
     <!-- Styles -->
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
-    <x-jet-banner />
+<body class="font-serif antialiased bg-violet-900 text-yellow-500 ">
 
-    <div class="min-h-screen bg-violet-500">
+    <div class="min-h-screen ">
         @livewire('header.site-header')
+        @livewire('modal.login-modal')
+        @livewire('modal.register-modal')
 
         <!-- Page Heading -->
         @if (isset($header))
-            <header class=" bg-yellow-400 shadow">
-                @livewire('header.site-header-images')
+            <header>
+                @if (request()->routeIs('welcome'))
+                    @livewire('header.site-header-images')
+                @endif
                 @livewire('header.site-header-navigator')
             </header>
         @endif
