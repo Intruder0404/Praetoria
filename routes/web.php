@@ -71,6 +71,12 @@ Route::middleware([
         Route::get('/users', function () {
             return view('pages.member.admin.administration');
         })->name('admin.users');
+        Route::get('/kingdoms', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.kingdoms');
+        Route::get('/religions', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.religions');
         Route::get('/attributes', function () {
             return view('pages.member.admin.administration');
         })->name('admin.attributes');
