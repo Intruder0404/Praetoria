@@ -65,12 +65,15 @@ Route::middleware([
         Route::get('/familles', function () {
             return view('pages.member.admin.administration');
         })->name('admin.familles');
-        Route::get('/guilde', function () {
+        Route::get('/guilds', function () {
             return view('pages.member.admin.administration');
-        })->name('admin.guilde');
+        })->name('admin.guilds');
         Route::get('/users', function () {
             return view('pages.member.admin.administration');
         })->name('admin.users');
+        Route::get('/attributes', function () {
+            return view('pages.member.admin.administration');
+        })->name('admin.attributes');
     });
 });
 

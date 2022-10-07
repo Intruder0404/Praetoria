@@ -7,13 +7,18 @@
             </x-jet-nav-link>
         </li>
         <li class="p-3">
-            <x-jet-nav-link class="text-yellow-500" href="{{ route('admin.guilde') }}" :active="request()->routeIs('location')">
+            <x-jet-nav-link class="text-yellow-500" href="{{ route('admin.guilds') }}" :active="request()->routeIs('location')">
                 {{ __('Guilde') }}
             </x-jet-nav-link>
         </li>
         <li class="p-3">
             <x-jet-nav-link class="text-yellow-500" href="{{ route('admin.users') }}" :active="request()->routeIs('politicalsystem')">
                 {{ __('Users') }}
+            </x-jet-nav-link>
+        </li>
+        <li class="p-3">
+            <x-jet-nav-link class="text-yellow-500" href="{{ route('admin.attributes') }}" :active="request()->routeIs('politicalsystem')">
+                {{ __('Attributes') }}
             </x-jet-nav-link>
         </li>
     </ul>
