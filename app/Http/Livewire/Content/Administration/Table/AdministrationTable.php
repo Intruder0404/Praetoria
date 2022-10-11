@@ -4,10 +4,13 @@ namespace App\Http\Livewire\Content\Administration\Table;
 
 use App\Models\Attribute\Attribute;
 use App\Models\Family\Family;
+use App\Models\Family\FamilyAttribute;
+use App\Models\Family\FamilyAttributeValue;
 use App\Models\Guild\Guild;
 use App\Models\Kingdom\Kingdom;
 use App\Models\Religion\Religion;
 use App\Models\User\User;
+use App\Models\Value\Value;
 use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
@@ -75,7 +78,11 @@ class AdministrationTable extends Component
                 $this->formValueObject = Guild::All();
                 break;
             case "admin.familles" :
-                Family::create(['name' => 'New Family']);
+                $family = Family::create(['name' => 'New Family']);
+                foreach(FamilyAttribute::All() as $familyAttribute){
+                    $value = Value::create(['value' => '']);
+                    FamilyAttributeValue::create(['family_id'=>$family->id,'value_id'=>$value->id,'family_attribute_id'=>$familyAttribute->id]);
+                }
                 $this->formValueObject = Family::All();
                 break;
             case "admin.religions" :

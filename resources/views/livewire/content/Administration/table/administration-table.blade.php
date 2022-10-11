@@ -14,12 +14,10 @@
                     <th class="bg-violet-900 text-left px-8 py-4" data-field="name" data-editable="true"
                         scope="col">{{$key}}</th>
                 @endforeach
-                @if($object->attributes)
-                    @foreach($object->attributes as $attribute)
-                        <th class="bg-violet-900 text-left px-8 py-4" data-field="name" data-editable="true"
-                            scope="col">{{$attribute->attribute->name}}</th>
-                    @endforeach
-                @endif
+                @foreach($object->familyAttributeValue as $familyAttributeValue)
+                    <th class="bg-violet-900 text-left px-8 py-4" data-field="name" data-editable="true"
+                        scope="col">{{$familyAttributeValue->familyAttribute->attribute->name}}</th>
+                @endforeach
                 @break;
             @endforeach
         </tr>
@@ -30,17 +28,12 @@
                 @foreach(json_decode(json_encode($object), true) as $key=>$column)
                     <td class="hover:bg-violet-400">{{$column}}</td>
                 @endforeach
-                    @foreach($object->attributes as $attribute)
-                        <td class="hover:bg-violet-400">{{$attribute->attributeValue->value->value}}</td>
-                    @endforeach
+                @foreach($object->familyAttributeValue as $familyAttributeValue)
+                    <td class="hover:bg-violet-400">{{$familyAttributeValue->value->value}}</td>
+                @endforeach
             </tr>
         @endforeach
         <tbody>
     </table>
-    <div>
-        @foreach($formValueObject as $guild)
-            {{$guild->attributes}}
-        @endforeach
-    </div>
 </div>
 

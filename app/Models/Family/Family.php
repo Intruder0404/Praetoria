@@ -27,13 +27,9 @@ class Family extends Model
         'name'
     ];
 
-    public function attributeValues()
+    public function familyAttributeValue()
     {
-        return $this->hasMany(FamilyAttribute::class);
+        return $this->hasMany(FamilyAttributeValue::class);
     }
 
-    public function attributeFamily()
-    {
-        return $this->belongsTo(FamilyAttribute::class,'family_id');
-    }
 }

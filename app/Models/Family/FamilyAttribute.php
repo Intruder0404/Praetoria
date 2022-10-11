@@ -7,6 +7,7 @@
 namespace App\Models\Family;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Attribute\Attribute;
 
 /**
  * Class FamilyAttribute
@@ -23,27 +24,14 @@ class FamilyAttribute extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'family_id' => 'int',
 		'attribute_id' => 'int'
 	];
 
 	protected $fillable = [
-		'family_id',
 		'attribute_id'
 	];
 
-    public function family()
-    {
-        return $this->hasOne('App\Models\Guild\Family','id','family_id');
-    }
-
-    public function attribute()
-    {
-        return $this->hasOne('App\Models\Attribute\Attribute','id','attribute_id');
-    }
-
-    public function attributeValue()
-    {
-        return $this->hasOne(FamilyAttributeValue::class,'family_attribute_id','id');
+    public function attribute(){
+        return $this->hasOne(Attribute::class,'id','attribute_id');
     }
 }
