@@ -1,32 +1,46 @@
 <div class="container horizontal-scrollable" style="height:100%;overflow: auto;">
-    <button onclick="alert('allo')">edit</button>
+    <div class="inline-flex">
+        <button class="bg-violet-700 hover:bg-violet-400 font-bold py-2 px-4 rounded-l" wire:click="addRow">Add Row
+        </button>
+        <button class="bg-violet-700 hover:bg-violet-400 font-bold py-2 px-4 rounded-r"
+                wire:click="$emit('triggerAddAttributeModal')">Add Column
+        </button>
+    </div>
     <table class="shadow-lg bg-violet-500 border-separate table-responsive-md table-striped " style="overflow: auto;">
         <thead class="border-separate">
         <tr>
-            @foreach($formObject as $object)
-                    <?php
-                    $objectArray = json_decode(json_encode($object), true);
-                    ?>
-                @foreach($objectArray as $key=>$column)
+            @foreach($formHeaderObject as $object)
+                @foreach(json_decode(json_encode($object), true) as $key=>$column)
                     <th class="bg-violet-900 text-left px-8 py-4" data-field="name" data-editable="true"
                         scope="col">{{$key}}</th>
                 @endforeach
+                @if($object->attributes)
+                    @foreach($object->attributes as $attribute)
+                        <th class="bg-violet-900 text-left px-8 py-4" data-field="name" data-editable="true"
+                            scope="col">{{$attribute->attribute->name}}</th>
+                    @endforeach
+                @endif
                 @break;
             @endforeach
         </tr>
         </thead>
         <tbody>
-        @foreach($formObject as $object)
-                <?php
-                $objectArray = json_decode(json_encode($object), true);
-                ?>
+        @foreach($formValueObject as $object)
             <tr class="border px-8 py-4 bg-violet-700 hover:bg-violet-500 cursor-pointer text-center">
-                @foreach($objectArray as $key=>$column)
-                    <td class="hover:bg-violet-400" contenteditable="{{$editable}}">{{$column}}</td>
+                @foreach(json_decode(json_encode($object), true) as $key=>$column)
+                    <td class="hover:bg-violet-400">{{$column}}</td>
                 @endforeach
+                    @foreach($object->attributes as $attribute)
+                        <td class="hover:bg-violet-400">{{$attribute->attributeValue->value->value}}</td>
+                    @endforeach
             </tr>
         @endforeach
         <tbody>
     </table>
+    <div>
+        @foreach($formValueObject as $guild)
+            {{$guild->attributes}}
+        @endforeach
+    </div>
 </div>
 

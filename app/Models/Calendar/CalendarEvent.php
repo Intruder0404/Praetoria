@@ -4,14 +4,14 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Calendar;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CalendarEvent
- * 
+ *
  * @property int $id
  * @property string $title
  * @property Carbon $start

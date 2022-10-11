@@ -2,12 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Family\Family;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\Family;
+use Livewire\Component;
 
 class PraetorianFamilyNav extends Component
 {

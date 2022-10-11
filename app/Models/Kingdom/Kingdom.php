@@ -4,14 +4,14 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Kingdom;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Family
- * 
+ * Class Kingdom
+ *
  * @property int $id
  * @property string $name
  * @property Carbon|null $created_at
@@ -19,9 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Family extends Model
+class Kingdom extends Model
 {
-	protected $table = 'families';
+	protected $table = 'kingdoms';
 
 	protected $fillable = [
 		'name'

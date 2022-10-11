@@ -4,14 +4,14 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Religion;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Attribute
- * 
+ * Class Religion
+ *
  * @property int $id
  * @property string $name
  * @property Carbon|null $created_at
@@ -19,9 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Attribute extends Model
+class Religion extends Model
 {
-	protected $table = 'attributes';
+	protected $table = 'religions';
 
 	protected $fillable = [
 		'name'

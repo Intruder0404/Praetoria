@@ -4,26 +4,26 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Value;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Kingdom
- * 
+ * Class Value
+ *
  * @property int $id
- * @property string $name
+ * @property string $value
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
  * @package App\Models
  */
-class Kingdom extends Model
+class Value extends Model
 {
-	protected $table = 'kingdoms';
+	protected $table = 'values';
 
 	protected $fillable = [
-		'name'
+		'value'
 	];
 }

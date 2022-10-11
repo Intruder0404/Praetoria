@@ -4,14 +4,14 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Attribute;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Guild
- * 
+ * Class Attribute
+ *
  * @property int $id
  * @property string $name
  * @property Carbon|null $created_at
@@ -19,9 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class Guild extends Model
+class Attribute extends Model
 {
-	protected $table = 'guilds';
+	protected $table = 'attributes';
 
 	protected $fillable = [
 		'name'

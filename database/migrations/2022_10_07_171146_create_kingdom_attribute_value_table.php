@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('family_attribute', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('family_id')->unsigned();
-            $table->integer('attribute_id')->unsigned();
+        Schema::create('kingdom_attribute_value', function (Blueprint $table) {
+            $table->id();
+            $table->integer('kingdom_attribute_id')->unsigned();
             $table->integer('value_id')->unsigned();
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('family_attribute');
+        Schema::dropIfExists('kingdom_attribute_value');
     }
 };

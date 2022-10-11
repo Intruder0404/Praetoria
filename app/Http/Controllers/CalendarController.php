@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Calendar\CalendarEvent;
 use Illuminate\Http\Request;
-use App\Models\CalendarEvent;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Response;
 
 class CalendarController extends Controller
 {

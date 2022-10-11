@@ -7,8 +7,8 @@
             <div class="rounded-l-lg">
                 @livewire('content.administration.navigator.administration-navigator')
             </div>
-
             @livewire('content.administration.table.administration-table')
+            @livewire('content.administration.modal.add-attribute-modal')
         </div>
     </div>
 </x-app-layout>

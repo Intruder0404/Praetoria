@@ -4,13 +4,13 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class UserType
- * 
+ *
  * @property int $id
  * @property string|null $name
  *

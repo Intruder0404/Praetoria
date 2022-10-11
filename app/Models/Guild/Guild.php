@@ -4,26 +4,31 @@
  * Created by Reliese Model.
  */
 
-namespace App\Models;
+namespace App\Models\Guild;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Value
- * 
+ * Class Guild
+ *
  * @property int $id
- * @property string $value
+ * @property string $name
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
  * @package App\Models
  */
-class Value extends Model
+class Guild extends Model
 {
-	protected $table = 'values';
+	protected $table = 'guilds';
 
 	protected $fillable = [
-		'value'
+		'name'
 	];
+
+    public function attributes()
+    {
+        return $this->hasMany(GuildAttribute::class,'guild_id');
+    }
 }

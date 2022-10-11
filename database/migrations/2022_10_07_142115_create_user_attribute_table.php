@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guild_attribute', function (Blueprint $table) {
+        Schema::create('user_attributes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('guild_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('attribute_id')->unsigned();
-            $table->integer('value_id')->unsigned();
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guild_attribute');
+        Schema::dropIfExists('user_attribute');
     }
 };
