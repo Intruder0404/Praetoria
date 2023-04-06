@@ -10,13 +10,13 @@
 
             <div class="shrink-0 flex justify-center sm:rounded-lg">
                 @if (request()->routeIs('/'))
-                    @include('pages.global.guild.description')
+                    <livewire:content.guild.description key="{{ Str::random() }}"/>
                 @elseif (request()->routeIs('description'))
-                    @include('pages.global.guild.description')
+                    <livewire:content.guild.description key="{{ Str::random() }}"/>
                 @elseif (request()->routeIs('politicalsystem'))
-                    @include('pages.global.guild.politicalsystem')
+                    <livewire:content.guild.description key="{{ Str::random() }}"/>
                 @elseif (request()->routeIs('location'))
-                    @include('pages.global.guild.location')
+                    <livewire:content.guild.description key="{{ Str::random() }}"/>
                 @endif
             </div>
         </div>
