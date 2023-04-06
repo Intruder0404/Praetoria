@@ -7,15 +7,20 @@ use Livewire\Component;
 class Dropdown extends Component
 {
     public $value;
-    public $values;
+    public $values = null;
 
     public function mount($values)
     {
         $this->values = $values;
     }
 
+    public function onChange()
+    {
+        $this->emit('setChosenAttribute', $this->value);
+    }
+
     public function render()
     {
-        return view('livewire.content.components.dropdown.dropdown');
+        return view('content.components.dropdown.dropdown');
     }
 }

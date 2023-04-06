@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $name
+ * @property boolean $isActive
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -24,11 +25,12 @@ class Guild extends Model
 	protected $table = 'guilds';
 
 	protected $fillable = [
-		'name'
+		'name',
+        'isActive'
 	];
 
-    public function attributes()
+    public function attributeValues()
     {
-        return $this->hasMany(GuildAttribute::class,'guild_id');
+        return $this->hasMany(GuildAttributeValue::class,'guild_id');
     }
 }

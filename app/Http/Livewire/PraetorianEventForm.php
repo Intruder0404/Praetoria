@@ -8,6 +8,6 @@ class PraetorianEventForm extends Component
 {
     public function render()
     {
-        return view('livewire.praetorian-event-form');
+        return view('praetorian-event-form');
     }
 }

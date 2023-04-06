@@ -8,6 +8,6 @@ class SiteHeaderNavigator extends Component
 {
     public function render()
     {
-        return view('livewire.header.site-header-navigator');
+        return view('header.site-header-navigator');
     }
 }

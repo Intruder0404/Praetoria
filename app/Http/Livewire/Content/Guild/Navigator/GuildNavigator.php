@@ -11,6 +11,6 @@ class GuildNavigator extends Component
 {
     public function render(): View|Factory|Application
     {
-        return view('livewire.content.guild.navigator.guild-navigator');
+        return view('content.guild.navigator.guild-navigator');
     }
 }

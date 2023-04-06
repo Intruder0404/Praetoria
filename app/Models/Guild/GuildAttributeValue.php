@@ -27,16 +27,22 @@ class GuildAttributeValue extends Pivot
 
 	protected $casts = [
 		'guild_attribute_id' => 'int',
+        'guild_id'=>'int',
 		'value_id' => 'int'
 	];
 
 	protected $fillable = [
 		'guild_attribute_id',
+        'guild_id',
 		'value_id'
 	];
-
-    public function value()
-    {
-        return $this->hasOne(Value::class, 'id', 'value_id');
+    public function attribute(){
+        return $this->hasOne(GuildAttribute::class,'id','guild_attribute_id');
+    }
+    public function type(){
+        return $this->hasOne(Guild::class,'id','guild_id');
+    }
+    public function value(){
+        return $this->hasOne(Value::class,'id','value_id');
     }
 }

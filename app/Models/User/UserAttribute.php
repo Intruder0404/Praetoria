@@ -6,6 +6,7 @@
 
 namespace App\Models\User;
 
+use App\Models\Attribute\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -24,27 +25,15 @@ class UserAttribute extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'user_id' => 'int',
 		'attribute_id' => 'int'
 	];
 
 	protected $fillable = [
-		'user_id',
 		'attribute_id'
 	];
 
-    public function user()
-    {
-        return $this->hasOne('App\Models\User\User','id','user_id');
-    }
-
     public function attribute()
     {
-        return $this->hasOne('App\Models\Attribute\Attribute','id','attribute_id');
-    }
-
-    public function attributeValue()
-    {
-        return $this->hasOne(UserAttributeValue::class,'user_attribute_id','id');
+        return $this->hasOne(Attribute::class,'id','attribute_id');
     }
 }

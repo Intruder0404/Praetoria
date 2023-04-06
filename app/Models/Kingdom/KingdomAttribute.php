@@ -6,6 +6,7 @@
 
 namespace App\Models\Kingdom;
 
+use App\Models\Attribute\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -24,27 +25,15 @@ class KingdomAttribute extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'kingdom_id' => 'int',
 		'attribute_id' => 'int'
 	];
 
 	protected $fillable = [
-		'kingdom_id',
 		'attribute_id'
 	];
 
-    public function kingdom()
-    {
-        return $this->hasOne('App\Models\Kingdom\Kingdom','id','kingdom_id');
-    }
-
     public function attribute()
     {
-        return $this->hasOne('App\Models\Attribute\Attribute','id','attribute_id');
-    }
-
-    public function attributeValue()
-    {
-        return $this->hasOne(KingdomAttributeValue::class,'kingdom_attribute_id','id');
+        return $this->hasOne(Attribute::class,'id','attribute_id');
     }
 }

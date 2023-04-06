@@ -11,6 +11,6 @@ class AdministrationNavigator extends Component
 {
     public function render(): View|Factory|Application
     {
-        return view('livewire.Content.Administration.Navigator.administration-navigator');
+        return view('Content.Administration.Navigator.administration-navigator');
     }
 }

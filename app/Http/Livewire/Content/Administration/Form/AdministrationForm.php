@@ -16,6 +16,6 @@ class AdministrationForm extends Component
     {
         $this->formObject = User::All();
 
-        return view('livewire.content.administration.form.administration-form');
+        return view('content.administration.form.administration-form');
     }
 }

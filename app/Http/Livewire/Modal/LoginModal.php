@@ -16,6 +16,6 @@ class LoginModal extends Component
     }
     public function render()
     {
-        return view('livewire.modal.login-modal');
+        return view('modal.login-modal');
     }
 }

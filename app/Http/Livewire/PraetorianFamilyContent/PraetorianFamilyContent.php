@@ -8,6 +8,6 @@ class PraetorianFamilyContent extends Component
 {
     public function render()
     {
-        return view('livewire.praetorian-family-content.praetorian-family-content');
+        return view('praetorian-family-content.praetorian-family-content');
     }
 }

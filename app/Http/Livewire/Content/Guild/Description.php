@@ -8,6 +8,6 @@ class Description extends Component
 {
     public function render()
     {
-        return view('livewire.content.guild.description');
+        return view('content.guild.description');
     }
 }

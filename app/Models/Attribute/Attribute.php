@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $name
+ * @property string $type
+ * @property boolean $isActive
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -24,6 +26,7 @@ class Attribute extends Model
 	protected $table = 'attributes';
 
 	protected $fillable = [
-		'name'
+		'name',
+        'isActive'
 	];
 }

@@ -6,6 +6,7 @@
 
 namespace App\Models\Religion;
 
+use App\Models\Attribute\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -24,27 +25,15 @@ class ReligionAttribute extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'religion_id' => 'int',
 		'attribute_id' => 'int'
 	];
 
 	protected $fillable = [
-		'religion_id',
 		'attribute_id'
 	];
 
-    public function religion()
-    {
-        return $this->hasOne('App\Models\Religion\Religion','id','religion_id');
-    }
-
     public function attribute()
     {
-        return $this->hasOne('App\Models\Attribute\Attribute','id','attribute_id');
-    }
-
-    public function attributeValue()
-    {
-        return $this->hasOne(ReligionAttributeValue::class,'religion_attribute_id','id');
+        return $this->hasOne(Attribute::class,'id','attribute_id');
     }
 }

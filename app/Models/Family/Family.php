@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property string $name
+ * @property boolean $isActive
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
@@ -24,10 +25,11 @@ class Family extends Model
     protected $table = 'families';
 
     protected $fillable = [
-        'name'
+        'name',
+        'isActive'
     ];
 
-    public function familyAttributeValue()
+    public function attributeValues()
     {
         return $this->hasMany(FamilyAttributeValue::class);
     }

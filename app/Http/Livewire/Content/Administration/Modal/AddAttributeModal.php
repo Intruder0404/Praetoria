@@ -7,21 +7,29 @@ use Livewire\Component;
 
 class AddAttributeModal extends Component
 {
-    public $open = false;
+    public bool $open = false;
     public $attributes;
+    public $chosenAttribute;
 
-    protected $listeners = ['triggerAddAttributeModal'];
-
-    public function mount(){
-        $this->attributes = Attribute::all();
-    }
+    protected $listeners = ['triggerAddAttributeModal','setChosenAttribute'];
 
     public function triggerAddAttributeModal()
     {
         $this->open = !$this->open;
     }
+
+    public function setChosenAttribute($attribute)
+    {
+        $this->chosenAttribute = $attribute;
+    }
+
+    public function save()
+    {
+        $this->emit('addAttribute', $this->chosenAttribute);
+    }
+
     public function render()
     {
-        return view('livewire.content.administration.modal.add-attribute-modal');
+        return view('content.administration.modal.add-attribute-modal');
     }
 }

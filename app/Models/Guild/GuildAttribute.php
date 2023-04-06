@@ -7,7 +7,7 @@
 namespace App\Models\Guild;
 
 use App\Models\Attribute\Attribute;
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class GuildAttribute
@@ -19,33 +19,21 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  *
  * @package App\Models
  */
-class GuildAttribute extends Pivot
+class GuildAttribute extends Model
 {
 	protected $table = 'guild_attributes';
 	public $timestamps = false;
 
 	protected $casts = [
-		'guild_id' => 'int',
 		'attribute_id' => 'int'
 	];
 
 	protected $fillable = [
-		'guild_id',
 		'attribute_id'
 	];
-
-    public function guild()
-    {
-        return $this->hasOne(Guild::class,'id','guild_id');
-    }
 
     public function attribute()
     {
         return $this->hasOne(Attribute::class,'id','attribute_id');
-    }
-
-    public function attributeValue()
-    {
-        return $this->hasOne(GuildAttributeValue::class,'guild_attribute_id','id');
     }
 }

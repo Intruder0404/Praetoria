@@ -16,6 +16,6 @@ class RegisterModal extends Component
     }
     public function render()
     {
-        return view('livewire.modal.register-modal');
+        return view('modal.register-modal');
     }
 }

@@ -12,11 +12,12 @@ use Livewire\Component;
 class PraetorianFamilyNav extends Component
 {
     public Collection $families;
-
-    public function render() : Application|Factory|View
+    public function mount()
     {
         $this->families = Family::all();
-
-        return view('livewire.praetorian-family-nav');
+    }
+    public function render() : Application|Factory|View
+    {
+        return view('praetorian-family-nav');
     }
 }

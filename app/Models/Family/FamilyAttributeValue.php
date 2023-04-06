@@ -36,11 +36,11 @@ class FamilyAttributeValue extends Model
 		'family_id',
 		'value_id'
 	];
-    public function familyAttribute(){
+    public function attribute(){
         return $this->hasOne(FamilyAttribute::class,'id','family_attribute_id');
     }
-    public function family(){
-        return $this->hasOne(Family::class);
+    public function type(){
+        return $this->hasOne(Family::class,'id','family_id');
     }
     public function value(){
         return $this->hasOne(Value::class,'id','value_id');

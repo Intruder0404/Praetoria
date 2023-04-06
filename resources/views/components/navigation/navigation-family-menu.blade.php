@@ -6,24 +6,24 @@
 
                 <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('news') }}" :active="request()->routeIs('news')">
+                        <x-responsive-nav-link href="{{ route('news') }}" :active="request()->routeIs('news')">
                             {{ __('News') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     </div>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('guilde') }}" :active="request()->routeIs('guilde')">
+                        <x-responsive-nav-link href="{{ route('guilde') }}" :active="request()->routeIs('guilde')">
                             {{ __('Guilde') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     </div>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('familles') }}" :active="request()->routeIs('familles')">
+                        <x-responsive-nav-link href="{{ route('familles') }}" :active="request()->routeIs('familles')">
                             {{ __('Familles') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     </div>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-jet-responsive-nav-link href="{{ route('events') }}" :active="request()->routeIs('events')">
+                        <x-responsive-nav-link href="{{ route('events') }}" :active="request()->routeIs('events')">
                             {{ __('Events') }}
-                        </x-jet-responsive-nav-link>
+                        </x-responsive-nav-link>
                     </div>
                 </div>
             </div>
