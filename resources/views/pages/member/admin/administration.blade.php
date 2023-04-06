@@ -7,7 +7,7 @@
             <div class="rounded-l-lg">
                 <livewire:content.administration.navigator.administration-navigator />
             </div>
-            <livewire:content.administration.table.table wire:model="type" :type="request()->route()->getName()" />
+            <livewire:content.administration.table.table wire:model="type" :type="$type"  />
             <livewire:content.administration.modal.add-attribute-modal />
         </div>
     </div>

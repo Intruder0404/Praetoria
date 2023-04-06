@@ -59,7 +59,14 @@ Route::middleware([
     });
 
     Route::prefix('administration')->group(function(){
-        Route::get('/', function () {
+        Route::view('/', 'pages.member.admin.administration', ['type' => ''])->name('administration');
+        Route::view('/familles', 'pages.member.admin.administration', ['type' => 'Family'])->name('admin.familles');
+        Route::view('/guilds', 'pages.member.admin.administration', ['type' => 'Guild'])->name('admin.guilds');
+        Route::view('/users', 'pages.member.admin.administration', ['type' => 'User'])->name('admin.users');
+        Route::view('/kingdoms', 'pages.member.admin.administration', ['type' => 'Kingdom'])->name('admin.kingdoms');
+        Route::view('/religions', 'pages.member.admin.administration', ['type' => 'Religion'])->name('admin.religions');
+        Route::view('/attributes', 'pages.member.admin.administration', ['type' => 'Attribute'])->name('admin.attributes');
+       /*Route::get('/', function () {
             return view('pages.member.admin.administration');
         })->name('administration');
         Route::get('/familles', function () {
@@ -79,7 +86,7 @@ Route::middleware([
         })->name('admin.religions');
         Route::get('/attributes', function () {
             return view('pages.member.admin.administration');
-        })->name('admin.attributes');
+        })->name('admin.attributes');*/
     });
 });
 

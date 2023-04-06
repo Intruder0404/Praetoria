@@ -26,11 +26,18 @@ class TableCell extends Component
     public Collection $kingdoms;
     public Collection $attributes;
 
+    protected $listeners = ['cellChange'];
+
+    public function cellChange($value)
+    {
+        if($this->isEditable)
+            $this->cellData = $value;
+    }
+
     public function switchEditable()
     {
         $this->isEditable = !$this->isEditable;
     }
-
     public function saveValue()
     {
         try {

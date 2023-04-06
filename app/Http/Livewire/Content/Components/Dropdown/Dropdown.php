@@ -16,7 +16,7 @@ class Dropdown extends Component
 
     public function onChange()
     {
-        $this->emit('setChosenAttribute', $this->value);
+        $this->emitUp('cellChange', $this->value);
     }
 
     public function render()

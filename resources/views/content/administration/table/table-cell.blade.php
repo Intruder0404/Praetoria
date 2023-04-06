@@ -16,6 +16,16 @@
                 {{$cellData}}
             @endif
             @break
+        @case('textArea')
+            @if($isEditable)
+                <div>
+                <textarea style="border: none; width: 100%; height: 100%;" wire:model="cellData" />
+                <button wire:click="saveValue">save</button>
+                </div>
+            @else
+                <div>{{$cellData}}</div>
+            @endif
+            @break
         @case('date')
             @if($isEditable)
                 <input type="date" wire:model="cellData" />
@@ -27,25 +37,25 @@
         @case('kingdom')
             @if($isEditable)
                 <livewire:content.components.dropdown.dropdown :values="$kingdomOptions"/>
-                <button class="bg-violet-700" wire:click="saveCellData">save</button>
+                <button class="bg-violet-700" wire:click="saveValue">save</button>
             @else
-                {{$cellData}}
+                {{$kingdomOptions->find($cellData)->name??''}}
             @endif
             @break
         @case('religion')
             @if($isEditable)
                 <livewire:content.components.dropdown.dropdown :values="$religionOptions"/>
-                <button class="bg-violet-700" wire:click="saveCellData">save</button>
+                <button class="bg-violet-700" wire:click="saveValue">save</button>
             @else
-                {{$cellData}}
+                {{$religionOptions->find($cellData)->name??''}}
             @endif
             @break
         @case('family')
             @if($isEditable)
-                <livewire:content.components.dropdown.dropdown :values="$religionOptions"/>
-                <button class="bg-violet-700" wire:click="saveCellData">save</button>
+                <livewire:content.components.dropdown.dropdown :values="$familyOptions"/>
+                <button class="bg-violet-700" wire:click="saveValue">save</button>
             @else
-                {{$cellData}}
+                {{$familyOptions->find($cellData)->name??''}}
             @endif
             @break
         @default
