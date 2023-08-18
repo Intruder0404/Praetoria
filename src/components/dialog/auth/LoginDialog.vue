@@ -1,0 +1,67 @@
+<template>
+    <v-dialog v-model="active"
+              width="auto">
+      <template v-slot:activator="{ props }">
+        <v-btn v-if="activator==='button'" style="width: 100%" v-bind="props">
+          Login
+        </v-btn>
+        <v-list-item v-else-if="activator==='list-item'" style="width: 100%" v-bind="props">
+          Login
+        </v-list-item>
+        <v-btn v-else style="width: 100%" v-bind="props">
+          Login
+        </v-btn>
+      </template>
+      <v-card>
+        <v-card-title>
+          Login
+        </v-card-title>
+        <Login v-if="!isAuthLoading"/>
+        <v-progress-linear v-else
+                           color="deep-purple-accent-4"
+                           indeterminate
+                           rounded
+                           height="6"
+        ></v-progress-linear>
+      </v-card>
+    </v-dialog>
+</template>
+<script>
+import Login from "@/pages/auth/Login";
+import {mapState} from "pinia";
+import {authStore} from "@/store/auth";
+
+export default {
+  name: "LoginDialog",
+  components: {Login},
+  props: ['isActive','activator'],
+  data() {
+    return {
+      active: false
+    }
+  },
+  methods: {
+    close() {
+      this.$emit('closeCreate');
+    }
+  },
+  computed: {
+    ...mapState(authStore, ['isAuthLoading', 'isAuthenticated']),
+    auth() {
+      return this.isAuthenticated;
+    }
+  },
+  watch: {
+    isActive: {
+      handler(newVal, oldVal) {
+        this.active = newVal;
+      }
+    },
+    isAuthenticated: {
+      handler(newVal, oldVal) {
+        this.active = false;
+      }
+    }
+  }
+}
+</script>
