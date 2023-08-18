@@ -30,7 +30,7 @@ class Table extends Component
             ['attribute_id' => $attributeId]);
         foreach (call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type, 'All')) as $user) {
             $value = Value::create(['value' => '']);
-            call_user_func_array(array(self::__modelUrl.$this->type.'\\'.$this->type.'AttributeValue', 'create')
+            call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type.'AttributeValue', 'create')
                 ,[strtolower($this->type).'_attribute_id' => $attribute->id, strtolower($this->type).'_id' => $user->id, 'value_id' => $value->id]);
         }
         $this->formHeaderObject = call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type, 'All'));
@@ -41,10 +41,12 @@ class Table extends Component
     {
         $model = call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type, 'create'),
             ['name' => 'Default']);
-        foreach (call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type.'Attribute', 'All')) as $attribute) {
-            $value = Value::create(['value' => '']);
-            call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type.'AttributeValue', 'create')
-                ,[strtolower($this->type).'_attribute_id' => $attribute->id, strtolower($this->type).'_id' => $model->id, 'value_id' => $value->id]);
+        if($this->type != 'Attribute'){
+            foreach (call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type.'Attribute', 'All')) as $attribute) {
+                $value = Value::create(['value' => '']);
+                call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type.'AttributeValue', 'create')
+                    ,[strtolower($this->type).'_attribute_id' => $attribute->id, strtolower($this->type).'_id' => $model->id, 'value_id' => $value->id]);
+            }
         }
         $this->formHeaderObject = call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type, 'All'));
         $this->formValueObject = call_user_func(array(self::__modelUrl.$this->type.'\\'.$this->type, 'All'));

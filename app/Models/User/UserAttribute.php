@@ -13,9 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class UserAttribute
  *
  * @property int $id
- * @property int $user_id
  * @property int $attribute_id
- * @property int $value_id
  *
  * @package App\Models
  */

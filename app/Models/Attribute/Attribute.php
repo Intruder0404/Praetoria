@@ -29,4 +29,13 @@ class Attribute extends Model
 		'name',
         'isActive'
 	];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'isActive' => 'boolean',
+    ];
 }

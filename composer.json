@@ -7,7 +7,9 @@
     "require": {
         "php": ">=8",
         "doctrine/dbal": "^3.6.1",
+        "fruitcake/laravel-cors": "dev-develop",
         "guzzlehttp/guzzle": "^7.2",
+        "inertiajs/inertia-laravel": "^0.6.9",
         "laravel/framework": "^10.0",
         "laravel/jetstream": "^2.11",
         "laravel/passport": "^11.0",
@@ -17,6 +19,7 @@
         "livewire/livewire": "^2.5",
         "rappasoft/laravel-livewire-tables": "^2.8",
         "riari/laravel-forum": "~5.0",
+        "socialiteproviders/microsoft-azure": "^5.1",
         "yajra/laravel-datatables-oracle": "^10.1"
     },
     "require-dev": {

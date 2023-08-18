@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-violet-700 rounded-l-sm" style="height: 100%">
-    <ul class="nav nav-pills nav-stacked">
+    <ul class="nav nav-pills nav-stacked flex-column">
         <!-- Navigation Links -->
         <li class="p-3 ">
             <x-nav-link class="text-yellow-500" href="{{ route('admin.familles') }}" :active="request()->routeIs('admin.familles')">

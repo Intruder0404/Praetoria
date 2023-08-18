@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\GuildController;
+use App\Http\Controllers\KingdomController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReligionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalendarController;
 
@@ -14,9 +19,7 @@ use App\Http\Controllers\CalendarController;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.global.welcome');
-})->name('welcome');
+Route::get('/', function () {return view('pages.global.welcome');})->name('welcome');
 
 Route::get('/react', function () {
     return view('react');
@@ -25,10 +28,6 @@ Route::get('/react', function () {
 Route::get('/news', function () {
     return view('pages.global.news');
 })->name('news');
-
-Route::get('/guilde', function () {
-    return view('pages.global.guilde');
-})->name('guilde');
 
 Route::get('/familles', function () {
     return view('pages.global.familles');
@@ -43,11 +42,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('pages.member.dashboard');
-    })->name('dashboard');
-
-
+    Route::view('/dashboard', 'pages.member.dashboard.dashboard')->name('dashboard');
     Route::get('/events', function () {
         return view('pages.member.events');
     })->name('events');
@@ -73,18 +68,6 @@ Route::prefix('familles')->group(function(){
     Route::get('/', function () {
         return view('pages.global.familles');
     })->name('familles');
-    Route::get('/octavii', function () {
-        return view('pages.global.familles');
-    })->name('octavii');
-    Route::get('/scipii', function () {
-        return view('pages.global.familles');
-    })->name('scipii');
-    Route::get('/rapax', function () {
-        return view('pages.global.familles');
-    })->name('rapax');
-    Route::get('/fortii', function () {
-        return view('pages.global.familles');
-    })->name('fortii');
 });
 
 Route::prefix('guild')->group(function(){

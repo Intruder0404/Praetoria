@@ -30,6 +30,15 @@ class Kingdom extends Model
         'isActive'
 	];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'isActive' => 'boolean',
+    ];
+
     public function attributeValues()
     {
         return $this->hasMany(KingdomAttributeValue::class,'kingdom_id');

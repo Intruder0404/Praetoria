@@ -10,8 +10,8 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link class="text-4xl text-yellow-500" href="{{ route('guilde') }}" :active="request()->routeIs('guilde')">
-                        {{ __('Guilde') }}
+                    <x-nav-link class="text-4xl text-yellow-500" href="{{ route('guild') }}" :active="request()->routeIs('guilde')">
+                        {{ __('Guild') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

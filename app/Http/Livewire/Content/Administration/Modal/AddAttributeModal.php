@@ -11,14 +11,14 @@ class AddAttributeModal extends Component
     public $attributes;
     public $chosenAttribute;
 
-    protected $listeners = ['triggerAddAttributeModal','setChosenAttribute'];
+    protected $listeners = ['triggerAddAttributeModal','cellChange'];
 
     public function triggerAddAttributeModal()
     {
         $this->open = !$this->open;
     }
 
-    public function setChosenAttribute($attribute)
+    public function cellChange($attribute)
     {
         $this->chosenAttribute = $attribute;
     }

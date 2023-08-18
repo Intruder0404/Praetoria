@@ -29,6 +29,15 @@ class Family extends Model
         'isActive'
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'isActive' => 'boolean',
+    ];
+
     public function attributeValues()
     {
         return $this->hasMany(FamilyAttributeValue::class);

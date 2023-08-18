@@ -2,6 +2,8 @@
 
 namespace App\Models\User;
 
+use App\Models\Character\Character;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -9,6 +11,23 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ *
+ * @property int $id
+ * @property string $username
+ * @property string $email
+ * @property string $firstName
+ * @property string $lastName
+ * @property string $password
+ * @property boolean $isActive
+ * @property int $type
+ * @property int $rank
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -23,10 +42,14 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'username',
+        'first_name',
+        'last_name',
         'email',
         'password',
-        'type'
+        'isActive',
+        'type',
+        'rank'
     ];
 
     /**
@@ -48,6 +71,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'isActive' => 'boolean',
     ];
     /**
      * The accessors to append to the model's array form.
@@ -55,12 +79,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
+        //'profile_photo_url',
     ];
 
     public function attributeValues()
     {
         return $this->hasMany(UserAttributeValue::class,'user_id');
+    }
+    public function attribute()
+    {
+        return $this->hasMany(UserAttribute::class,'user_id');
+    }
+    public function userType()
+    {
+        return $this->hasOne(UserType::class,'id','type');
+    }
+    public function userRank()
+    {
+        return $this->hasOne(Rank::class,'id','rank');
+    }
+    public function characters()
+    {
+        return $this->hasMany(Character::class,'user_id');
     }
 }
 

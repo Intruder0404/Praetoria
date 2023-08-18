@@ -22,6 +22,16 @@ class UserType extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'name'
+		'name',
+        'isActive'
 	];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'isActive' => 'boolean',
+    ];
 }

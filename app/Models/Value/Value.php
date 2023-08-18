@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Value
  *
  * @property int $id
- * @property string $value
+ * @property string|integer $value
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  *
