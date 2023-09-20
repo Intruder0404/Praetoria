@@ -2,7 +2,7 @@
   <v-btn @click="toggleTheme">{{theme.global.current.value.dark ? 'light' : 'dark'}}</v-btn>
 </template>
 
-<script>
+<script lang="ts">
 import {useTheme} from "vuetify";
 export default {
   name: "ThemeButton",

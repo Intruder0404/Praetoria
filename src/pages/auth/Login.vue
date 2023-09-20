@@ -34,7 +34,7 @@
   </div>
 
 </template>
-<script>
+<script lang="ts">
 import AuthenticationCard from '@/components/auth/AuthenticationCard.vue';
 import {mapActions, mapState} from "pinia";
 import {authStore} from "@/store/auth";

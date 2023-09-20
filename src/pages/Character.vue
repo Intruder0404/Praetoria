@@ -25,7 +25,7 @@
     </v-card-actions>
   </v-card>
 </template>
-<script>
+<script lang="ts">
 import vtoast from "@/components/stack/vtoast";
 import {toRaw} from "vue";
 import {mapActions,mapState} from "pinia";

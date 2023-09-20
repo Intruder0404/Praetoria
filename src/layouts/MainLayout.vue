@@ -7,18 +7,14 @@
       <router-view color="primary" name="AppBar">
       </router-view>
 
-      <v-main>
-        <v-container
-          class="d-flex justify-center align-center text-h5"
-          style="min-height: 300px;"
-        >
-          <router-view name="content"/>
-        </v-container>
+      <v-main style="margin-bottom: 100px">
+        <router-view name="content"/>
       </v-main>
+      <router-view color="primary" style="position:absolute;bottom:0;width: 100%" name="footer"/>
     </v-layout>
   </v-card>
 </template>
-<script>
+<script lang="ts">
 import vtoast from '@/components/stack/vtoast';
 import {mapActions, mapState} from "pinia";
 import {authStore} from "@/store/auth";

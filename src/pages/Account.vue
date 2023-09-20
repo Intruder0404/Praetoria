@@ -72,7 +72,7 @@
     </v-card-text>
   </v-card>
 </template>
-<script>
+<script lang="ts">
 import {mapActions, mapState} from "pinia";
 import vtoast from "@/components/stack/vtoast";
 import {authStore} from "@/store/auth";

@@ -14,7 +14,7 @@
         height="100%"
       >
         <div class="d-flex fill-height justify-center align-center">
-          <v-img :src="'/carousel/'+slide">
+          <v-img :src="slide.substring(11)">
           </v-img>
         </div>
       </v-sheet>
@@ -23,6 +23,14 @@
 </template>
 <script lang="ts">
 export default {
+  mounted(){
+    const test = Object.keys(import.meta.glob('@/assets/carousel/*'));
+    //test.forEach((e)=>{console.log(e)});
+    console.log(test[1].substring(11));
+  },
+  computed:{
+    slides:()=>{return Object.keys(import.meta.glob('@/assets/carousel/*'))}
+  },
   data() {
     return {
       colors: [
@@ -31,13 +39,6 @@ export default {
         'pink darken-2',
         'red lighten-1',
         'deep-purple accent-4',
-      ],
-      slides: [
-        'carousel1.jpg',
-        'carousel2.jpg',
-        'carousel3.jpg',
-        'carousel4.jpg',
-        'carousel5.jpg',
       ],
     }
   },

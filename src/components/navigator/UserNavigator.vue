@@ -38,7 +38,7 @@
     </v-list>
   </v-navigation-drawer>
 </template>
-<script>
+<script lang="ts">
 import {mapActions, mapState} from "pinia";
 import {authStore} from "@/store/auth";
 export default {

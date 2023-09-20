@@ -35,10 +35,10 @@
   </v-app-bar>
 </template>
 
-<script>
+<script lang="ts">
 import {mapActions, mapState} from "pinia";
 import {authStore} from "@/store/auth";
-import LoginDialog from "@/components/dialog/auth/LoginDialog";
+import {LoginDialog} from "@/components/dialog/auth/LoginDialog";
 import ThemeButton from "@/components/button/theme/ThemeButton";
 import LanguageButton from "@/components/button/language/LanguageButton";
 

@@ -26,15 +26,23 @@
       </v-card>
     </v-dialog>
 </template>
-<script>
+<script lang="ts">
 import Login from "@/pages/auth/Login";
 import {mapState} from "pinia";
 import {authStore} from "@/store/auth";
+import {defineComponent} from "vue";
 
-export default {
+export const LoginDialog = defineComponent({
   name: "LoginDialog",
   components: {Login},
-  props: ['isActive','activator'],
+  props: {
+    isActive:{
+      type: Boolean
+    },
+    activator:{
+      type: String
+    }
+  },
   data() {
     return {
       active: false
@@ -63,5 +71,5 @@ export default {
       }
     }
   }
-}
+})
 </script>

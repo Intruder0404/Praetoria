@@ -50,7 +50,7 @@
     </v-card>
   </v-dialog>
 </template>
-<script>
+<script lang="ts">
 
 import {mapState} from "pinia";
 import {optionsStore} from "@/store/options";

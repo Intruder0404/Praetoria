@@ -98,7 +98,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 import {VDataTable} from 'vuetify/labs/VDataTable';
 import {mapState} from "pinia";
 import CreateDialog from "@/components/dialog/admin/CreateDialog";

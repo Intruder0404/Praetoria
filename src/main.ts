@@ -13,7 +13,7 @@ import { createApp } from 'vue'
 // Plugins
 import { registerPlugins } from '@/plugins'
 
-import i18n from './plugins/i18n.ts'
+import i18n from './plugins/i18n'
 
 const app = createApp(App).use(i18n)
 

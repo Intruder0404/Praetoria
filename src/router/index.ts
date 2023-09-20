@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import UserNavigator from "@/components/navigator/UserNavigator";
 import AppBar from "@/components/appbar/AppBar";
+import Footer from "@/components/footer/Footer";
 import {authStore} from "@/store/auth";
 
 const routes = [
@@ -11,7 +12,8 @@ const routes = [
     name: 'home',
     components: {
       AppBar,
-      content: () => import('@/pages/Home.vue')
+      content: () => import('@/pages/Home.vue'),
+      footer: Footer
     }
   },
   {

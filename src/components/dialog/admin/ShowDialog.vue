@@ -53,8 +53,9 @@
     </v-card>
   </v-dialog>
 </template>
-<script>
-import {mapGetters} from "vuex";
+<script lang="ts">
+
+import {mapState} from "pinia";
 
 export default {
   name: "ShowDialog",
@@ -70,7 +71,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('optionsStore', ["getOptions", 'isOptionsLoading'])
+    ...mapState('optionsStore', ["getOptions", 'isOptionsLoading'])
   },
   watch:{
     isActive:{

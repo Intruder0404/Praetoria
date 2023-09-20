@@ -13,7 +13,7 @@
     </v-list>-->
   </v-navigation-drawer>
 </template>
-<script>
+<script lang="ts">
 import {mapActions,mapMutations} from "vuex";
 
 export default {
