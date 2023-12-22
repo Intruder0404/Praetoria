@@ -1,4 +1,3 @@
-import {KingdomAttributeValue} from "@/models/Guild";
 import {KingdomAttributeValue} from "@/models/Kingdom";
 
 export interface IKingdom {

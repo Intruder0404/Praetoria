@@ -16,7 +16,7 @@
         <v-card-title>
           Login
         </v-card-title>
-        <Login v-if="!isAuthLoading"/>
+        <Login v-if="!loading"/>
         <v-progress-linear v-else
                            color="deep-purple-accent-4"
                            indeterminate
@@ -27,12 +27,12 @@
     </v-dialog>
 </template>
 <script lang="ts">
-import Login from "@/pages/auth/Login";
+import Login from "@/pages/auth/Login.vue";
 import {mapState} from "pinia";
 import {authStore} from "@/store/auth";
 import {defineComponent} from "vue";
 
-export const LoginDialog = defineComponent({
+export default defineComponent({
   name: "LoginDialog",
   components: {Login},
   props: {
@@ -54,7 +54,7 @@ export const LoginDialog = defineComponent({
     }
   },
   computed: {
-    ...mapState(authStore, ['isAuthLoading', 'isAuthenticated']),
+    ...mapState(authStore, ['loading', 'isAuthenticated']),
     auth() {
       return this.isAuthenticated;
     }

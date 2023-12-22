@@ -1,4 +1,4 @@
-import {ReligionAttributeValue} from "@/models/Religion";
+import {ReligionAttributeValue} from "@/models/Religion/ReligionAttributeValue";
 
 export interface IReligion {
   id: number;

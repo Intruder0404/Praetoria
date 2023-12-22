@@ -1,6 +1,6 @@
-import {Attribute} from "@/models/Attribute";
+import {Attribute} from "@/models/Attribute/Attribute";
 import {Kingdom} from "@/models/Kingdom";
-import {Value} from "@/models/Value";
+import {Value} from "@/models/Value/Value";
 
 export interface IKingdomAttributeValue {
   id: number;

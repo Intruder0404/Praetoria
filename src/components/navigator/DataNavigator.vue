@@ -14,7 +14,6 @@
   </v-navigation-drawer>
 </template>
 <script lang="ts">
-import {mapActions,mapMutations} from "vuex";
 
 export default {
   data() {

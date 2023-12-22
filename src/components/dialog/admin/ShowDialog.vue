@@ -13,9 +13,9 @@
       <v-card-text>
         <v-container>
           <v-row>
-            <v-col cols="12" sm="6" md="4" v-if="getOptions[$route.params.name][0]!=undefined"
-                   v-for="(property,key) in getOptions[$route.params.name][0]">
-              <template v-if="key === 'attribute_values'" v-for="attribute_value in property">
+            <v-col cols="12" sm="6" md="4" v-if="options[name][0]!==undefined"
+                   v-for="(property,key) in options[name][0]">
+              <template v-if="String(key) === 'attribute_values'" v-for="attribute_value in property">
                 <v-text-field v-if="attribute_value.type.type === 'text'"
                               v-model="attribute_value.attribute.value.value"
                               :label="attribute_value.attribute.attribute.name"
@@ -27,14 +27,14 @@
                 <v-select
                   v-if="attribute_value.type.type ==='select'"
                   v-model="attribute_value.attribute.value.value"
-                  :items="attribute_value.attribute.name==='Family'?getOptions.families:attribute_value.attribute.name==='Religion'?getOptions.religions:[]"
+                  :items="attribute_value.attribute.name==='Family'?options.families:attribute_value.attribute.name==='Religion'?options.religions:[]"
                   :label="attribute_value.attribute.name"
                   item-title="name"
                   item-value="id"
                 ></v-select>
               </template>
               <v-text-field v-model="property"  v-else
-                             :label="key"
+                             :label="String(key)"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -55,13 +55,15 @@
 </template>
 <script lang="ts">
 
+import { optionsStore } from "@/store/options";
 import {mapState} from "pinia";
 
 export default {
   name: "ShowDialog",
   data(){
     return{
-      active:false
+      active:false,
+      name:null
     }
   },
   props:['isActive'],
@@ -71,7 +73,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('optionsStore', ["getOptions", 'isOptionsLoading'])
+    ...mapState(optionsStore, ["options", 'optionLoading'])
   },
   watch:{
     isActive:{
@@ -79,6 +81,9 @@ export default {
         this.active = newVal;
       }
     }
+  },
+  mounted() {
+    this.name = this.$route.params.name;
   }
 }
 </script>

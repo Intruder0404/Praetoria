@@ -1,17 +1,14 @@
 <template>
   <v-carousel
-    cycle
-    hide-delimiter-background
-    show-arrows="hover"
-    style="width: 40%;margin:50px"
+    style="height:100vh;"
+    :show-arrows="false"
+    hide-delimiters
   >
     <v-carousel-item
       v-for="(slide, i) in slides"
       :key="i"
     >
       <v-sheet
-        width="100%"
-        height="100%"
       >
         <div class="d-flex fill-height justify-center align-center">
           <v-img :src="slide.substring(11)">
@@ -19,20 +16,57 @@
         </div>
       </v-sheet>
     </v-carousel-item>
+    <v-overlay
+      :model-value="true"
+      location-strategy="static"
+      :contained="true"
+      :persistent="true"
+      class="d-flex justify-center align-center"
+    >
+      <InfoCard>
+        <template #title>
+          <div class="text-h1">
+            Devenez un fucking badass
+          </div>
+        </template>
+        <template #body>
+          <div class="text-h5">
+            trouvez-vous que le monde sont des petite pisseuses?<br/>
+            trouvez-vous dans une situation ou tout les gens autour de vous on l'air des mauviette?
+          </div>
+          <div class="text-h4">
+            Ben devenez une recrue pour la Legion Praetoria.
+          </div>
+        </template>
+        <template #actions>
+          <v-btn size="large" style="background: rgba(76, 175, 80, 0.3)">Devenir une recrue aujourd'hui</v-btn>
+          <v-btn size="large" style="background: rgba(236,73,73,0.3)">En savoir plus</v-btn>
+        </template>
+      </InfoCard>
+    </v-overlay>
   </v-carousel>
 </template>
+<style scoped>
+:deep(.v-overlay__scrim){
+  opacity: 0;
+
+}
+:deep(.v-overlay__content){
+  width: 90%;
+}
+</style>
 <script lang="ts">
+import InfoCard from "@/components/card/home/InfoCard.vue";
 export default {
+  components: {InfoCard},
   mounted(){
-    const test = Object.keys(import.meta.glob('@/assets/carousel/*'));
-    //test.forEach((e)=>{console.log(e)});
-    console.log(test[1].substring(11));
   },
   computed:{
     slides:()=>{return Object.keys(import.meta.glob('@/assets/carousel/*'))}
   },
   data() {
     return {
+      overlay:true,
       colors: [
         'indigo',
         'warning',

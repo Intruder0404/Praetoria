@@ -1,12 +1,12 @@
 <template>
   <v-navigation-drawer
-    permanent
+    expand-on-hover
   >
     <v-list>
       <v-list-item
-        v-if="getUser!==undefined"
-        :prepend-avatar="'/rank/'+getUser.user_rank.name+'.png'"
-        :title="getUser.username"
+        v-if="user!==undefined"
+        :prepend-avatar="'/rank/'+user.user_rank.name+'.png'"
+        :title="user.username"
       >
       </v-list-item>
     </v-list>
@@ -16,7 +16,7 @@
     <v-list density="compact" nav>
       <v-list-item prepend-icon="mdi-account" title="User Account" to="/account"></v-list-item>
       <v-list-item prepend-icon="mdi-account-child-outline" title="Personnage" value="personnage" to="/character"></v-list-item>
-      <v-list-group v-if="getUser.type === 2" prepend-icon="mdi-account-group" title="Administration" value="admin">
+      <v-list-group open-on-hover v-if="user.type === 2" prepend-icon="mdi-account-group" title="Administration" value="admin">
         <template v-slot:activator="{ props }">
           <v-list-item
             v-bind="props"
@@ -49,14 +49,14 @@ export default {
     };
   },
   computed:{
-    ...mapState(authStore,["getUser",'isAuthenticated','getAccess']),
+    ...mapState(authStore,{user:"user",isAuthenticated:'isAuthenticated',getAccess:'getAccess'}),
   },
   methods: {
     ...mapActions(authStore,["logOut"]),
     async submit(){
       try{
         await this.logOut();
-        this.$router.push('/login');
+        this.$router.push('/home');
       }catch (error) {
         this.$root.vtoast.show({message: error});
       }

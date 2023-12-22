@@ -1,7 +1,7 @@
-import {Attribute} from "@/models/Attribute";
-import {Religion} from "@/models/Religion";
-import {Value} from "@/models/Value";
-import {User} from "@/models";
+import {Attribute} from "@/models/Attribute/Attribute";
+import {Religion} from "@/models/Religion/Religion";
+import {Value} from "@/models/Value/Value";
+import {User} from "@/models/User/User";
 
 export interface IUserAttributeValue {
   id: number;

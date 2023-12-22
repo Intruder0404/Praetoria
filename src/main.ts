@@ -5,18 +5,16 @@
  */
 
 // Components
-import App from '@/layouts/MainLayout'
+import App from '@/layouts/MainLayout.vue'
 
 // Composables
-import { createApp } from 'vue'
+import {createApp, h} from 'vue'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
 
-import i18n from './plugins/i18n'
+const app = createApp({ render:()=>h(App)});
 
-const app = createApp(App).use(i18n)
+registerPlugins(app);
 
-registerPlugins(app)
-
-app.mount('#app')
+app.mount('#app');

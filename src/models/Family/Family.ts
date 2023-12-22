@@ -7,7 +7,7 @@ export interface IFamily {
   isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date | null;
-  attributeValues: FamilyAttributeValue[];
+  attribute_values: FamilyAttributeValue[];
 }
 
 export class Family implements IFamily {
@@ -17,7 +17,7 @@ export class Family implements IFamily {
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date | null;
-  attributeValues: FamilyAttributeValue[];
+  attribute_values: FamilyAttributeValue[];
 
   constructor(
     id: number,
@@ -26,7 +26,7 @@ export class Family implements IFamily {
     isActive: boolean,
     createdAt: Date,
     updatedAt: Date | null,
-    attributeValues: FamilyAttributeValue[]
+    attribute_values: FamilyAttributeValue[]
   ) {
     this.id = id ? id : 0;
     this.name = name ? name : '';
@@ -34,7 +34,7 @@ export class Family implements IFamily {
     this.isActive = isActive ? isActive : false;
     this.createdAt = createdAt ? createdAt : new Date();
     this.updatedAt = updatedAt ? updatedAt : null;
-    this.attributeValues = attributeValues ? attributeValues : [];
+    this.attribute_values = attribute_values ? attribute_values : [];
   }
 
 }

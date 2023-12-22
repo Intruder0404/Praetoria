@@ -32,6 +32,9 @@ export default {
         this.active = newVal;
       }
     }
+  },
+  mounted() {
+    this.name = this.$route.params.name;
   }
 }
 </script>

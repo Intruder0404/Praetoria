@@ -1,6 +1,4 @@
-import {Attribute} from "@/models/Attribute";
-import {Family} from "@/models/Family";
-import {Value} from "@/models/Value";
+import {Attribute,Family,Value} from "@/models";
 
 export interface IFamilyAttributeValue {
   id: number;

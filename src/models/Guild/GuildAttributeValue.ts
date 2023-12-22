@@ -1,6 +1,6 @@
-import {Attribute} from "@/models/Attribute";
-import {Guild} from "@/models/Guild";
-import {Value} from "@/models/Value";
+import {Attribute} from "@/models/Attribute/Attribute";
+import {Guild} from "@/models/Guild/Guild";
+import {Value} from "@/models/Value/Value";
 
 export interface IGuildAttributeValue {
   id: number;

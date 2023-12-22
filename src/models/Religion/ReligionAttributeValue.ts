@@ -1,6 +1,6 @@
-import {Attribute} from "@/models/Attribute";
-import {Religion} from "@/models/Religion";
-import {Value} from "@/models/Value";
+import {Attribute} from "@/models/Attribute/Attribute";
+import {Religion} from "@/models/Religion/Religion";
+import {Value} from "@/models/Value/Value";
 
 export interface IReligionAttributeValue {
   id: number;

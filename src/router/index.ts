@@ -1,9 +1,7 @@
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
-import UserNavigator from "@/components/navigator/UserNavigator";
-import AppBar from "@/components/appbar/AppBar";
-import Footer from "@/components/footer/Footer";
-import {authStore} from "@/store/auth";
+import { createRouter, createWebHistory,RouteRecordRaw  } from 'vue-router'
+import { UserNavigator,AppBar,Footer } from "@/components";
+import { authStore } from "@/store/auth";
 
 const routes = [
   {path: '/', redirect: '/home'},
@@ -11,7 +9,7 @@ const routes = [
     path: '/home',
     name: 'home',
     components: {
-      AppBar,
+      AppBar:AppBar,
       content: () => import('@/pages/Home.vue'),
       footer: Footer
     }
@@ -28,9 +26,8 @@ const routes = [
     path: '/dashboard',
     name: 'dashboard',
     components: {
-      AppBar,
       UserNavigator,
-      content: () => import('@/pages/Dashboard.vue')
+      content: () => import('@/pages/administration/Dashboard.vue')
     },
     meta: { requiresAuth: true },
   },
@@ -38,9 +35,8 @@ const routes = [
     path: '/admin/:name',
     name: 'admin',
     components: {
-      AppBar,
       UserNavigator,
-      content: () => import('@/pages/Admin.vue'),
+      content: () => import('@/pages/administration/Admin.vue'),
     },
     meta: { requiresAuth: true },
   },
@@ -48,9 +44,8 @@ const routes = [
     path: '/character',
     name: 'character',
     components: {
-      AppBar,
       UserNavigator,
-      content: () => import('@/pages/Character.vue'),
+      content: () => import('@/pages/administration/Character.vue'),
     },
     meta: { requiresAuth: true },
   },
@@ -58,9 +53,8 @@ const routes = [
     path: '/account',
     name: 'account',
     components: {
-      AppBar,
       UserNavigator,
-      content: () => import('@/pages/Account.vue'),
+      content: () => import('@/pages/administration/Account.vue'),
     },
     meta: { requiresAuth: true },
   },
@@ -69,16 +63,74 @@ const routes = [
     name: 'registration',
     components: {
       AppBar,
-      UserNavigator,
       content: () => import('@/components/auth/registration.vue'),
     },
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Guild',
+    name: 'guild',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Guild.vue'),
+      footer: Footer
+    },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Families',
+    name: 'families',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Families.vue'),
+      footer: Footer
+    },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Religions',
+    name: 'religions',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Religions.vue'),
+      footer: Footer
+    },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Politics',
+    name: 'politics',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Politics.vue'),
+      footer: Footer
+    },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Merchants',
+    name: 'merchants',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Merchants.vue'),
+      footer: Footer
+    },
+    meta: { requiresAuth: false },
+  },
+  {
+    path: '/Bicolline',
+    name: 'bicolline',
+    components: {
+      AppBar,
+      content: () => import('@/pages/Bicolline.vue'),
+    },
+    meta: { requiresAuth: false },
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes,
+  routes: routes as unknown as RouteRecordRaw[],
 });
 
 router.beforeEach((to, from, next) => {

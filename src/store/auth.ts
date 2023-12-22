@@ -3,50 +3,44 @@ import { defineStore } from 'pinia'
 import {HTTP as axios} from '@/http-common';
 import {User} from "@/models/User/User";
 
+interface IAuthStoreStates {
+  accessToken:string;
+  error?:string;
+  loading:boolean;
+  user?: User;
+}
+interface ILoginResponse {
+  data:ILoginData;
+}
+interface ILoginData{
+  massage:string;
+  token:string;
+  user:User;
+}
 export const authStore = defineStore('auth', {
-  state: () => ({
+  state: ():IAuthStoreStates => ({
     accessToken: '',
     error: null,
     loading: false,
     user: null,
   }),
   actions: {
-    register({commit}, registerData) {
-      commit('loadingStart');
-
-      axios.post('auth/register', {
-        ...registerData
-      })
-        .then(response => {
-          localStorage.setItem('access_token', response.data.data.token);
-          commit('setUser', response.data.data.user);
-          commit('loadingStop', null);
-          commit('updateAccessToken', response.data.data.token);
-        })
-        .catch(error => {
-          commit('loadingStop', error.response.data.error);
-          commit('updateAccessToken', null);
-          this.$root.vtoast.show({message: error.response.data.error})
-        })
+    register(registerData={}) {
     },
-    async LogIn(loginData) {
+    async LogIn(loginData:any) {
       this.loading = true;
-      //commit('loadingStart');
       await axios.post('auth/login', {
         ...loginData
       })
-        .then(response => {
-
-          this.user = response.data.data.user
-          this.accessToken = response.data.data.token;
+        .then((response:ILoginResponse) => {
+          this.user = response.data.user;
+          this.accessToken = response.data.token;
           this.error = null;
           this.loading = false;
         })
         .catch(error => {
           this.accessToken = '';
-          //commit('updateAccessToken', null);
           this.error = error.response.data.error;
-          //commit('setError', error.response.data.error);
           this.loading = false;
           throw new Error('Email or Password is incorrect');
           //this.$root.vtoast.show({message: error.response.data.error});
@@ -94,12 +88,9 @@ export const authStore = defineStore('auth', {
           } else {
             error.value = error.response.data.message || ""
           }
-          this.$root.vtoast.show({message: error.value});
+          //this.$root.vtoast.show({message: error.value});
           this.loading = false;
         })
-    },
-    fetchAccessToken({ commit }) {
-      commit('updateAccessToken', localStorage.getItem('access_token'));
     }
   },
   getters: {

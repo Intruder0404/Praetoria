@@ -11,12 +11,12 @@ import {User} from "@/models/User/User";
 export const optionsStore = defineStore('options', {
   state: () => ({
     options: {
-      religions: Array<Religion>[],
-      kingdoms: Array<Kingdom>[],
-      guilds: Array<Guild>[],
-      families: Array<Family>[],
-      users: Array<User>[],
-      attributes: Array<Attribute>[],
+      religions: Array<Religion>(),
+      kingdoms: Array<Kingdom>(),
+      guilds: Array<Guild>(),
+      families: Array<Family>(),
+      users: Array<User>(),
+      attributes: Array<Attribute>(),
       userTypes: [],
       ranks: [],
     },

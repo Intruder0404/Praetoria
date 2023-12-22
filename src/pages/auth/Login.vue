@@ -56,7 +56,7 @@ export default {
     ...mapState(authStore,["getUser", 'isAuthenticated']),
   },
   methods: {
-    ...mapActions(authStore,["LogIn"]),
+    ...mapActions(authStore,{LogIn:"LogIn"}),
     async submit() {
       try {
         await this.LogIn({email: this.email, password: this.password});

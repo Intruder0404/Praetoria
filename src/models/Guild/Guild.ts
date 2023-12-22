@@ -1,4 +1,4 @@
-import {GuildAttributeValue} from "@/models/Guild";
+import {GuildAttributeValue} from "@/models/Guild/GuildAttributeValue";
 
 export interface IGuild {
   id: number;
@@ -7,7 +7,7 @@ export interface IGuild {
   isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date|null;
-  attributeValues: GuildAttributeValue[];
+  attribute_values: GuildAttributeValue[];
 }
 
 export class Guild implements IGuild {
@@ -17,7 +17,7 @@ export class Guild implements IGuild {
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date|null;
-  attributeValues: GuildAttributeValue[];
+  attribute_values: GuildAttributeValue[];
 
   constructor(
     id: number,
@@ -26,7 +26,7 @@ export class Guild implements IGuild {
     isActive: boolean,
     createdAt: Date,
     updatedAt: Date|null,
-    attributeValues: GuildAttributeValue[]
+    attribute_values: GuildAttributeValue[]
   ) {
     this.id = id?id:0;
     this.name = name?name:'';
@@ -34,7 +34,7 @@ export class Guild implements IGuild {
     this.isActive = isActive?isActive:false;
     this.createdAt = createdAt?createdAt:new Date();
     this.updatedAt = updatedAt?updatedAt:null;
-    this.attributeValues = attributeValues?attributeValues:[];
+    this.attribute_values = attribute_values?attribute_values:[];
   }
 
 }
