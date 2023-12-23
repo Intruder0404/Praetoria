@@ -1,0 +1,1 @@
+import{N as e,S as s,R as t}from"./index-9fc3fb31.js";const a={name:"Merchants"},c={class:"d-flex w-100 flex-wrap"};function n(r,o,p,_,f,d){return t(),s("div",c," Merchants page ")}const i=e(a,[["render",n]]);export{i as default};
