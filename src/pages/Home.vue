@@ -20,7 +20,7 @@
       <Religion style="height: 50vh"/>
     </div>
     <v-spacer></v-spacer>
-    <div class="v-col-12 pa-0">
+    <div class="v-col-12 pa-0 ">
       <Merchants style="height: 50vh"/>
     </div>
     <v-spacer></v-spacer>
