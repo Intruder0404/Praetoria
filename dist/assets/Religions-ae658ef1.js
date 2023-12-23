@@ -1,1 +1,0 @@
-import{N as e,S as s,R as o}from"./index-d802a291.js";const n={name:"Religions"},t={class:"d-flex w-100 flex-wrap"};function a(c,r,i,l,p,_){return o(),s("div",t," religions page ")}const d=e(n,[["render",a]]);export{d as default};

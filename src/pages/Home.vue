@@ -1,35 +1,33 @@
 <template>
-      <v-row fluid>
-        <v-col cols="12">
-          <HomeCarousel/>
-        </v-col>
-        <v-spacer></v-spacer>
-        <div>
-          <v-col cols="12">
-            <Guild style="height: 50vh"/>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12">
-            <Family style="height: 50vh"/>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12">
-            <Politics style="height: 50vh"/>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12">
-            <Religion style="height: 50vh"/>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12">
-            <Merchants style="height: 50vh"/>
-          </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12">
-            <Bicolline style="height: 50vh"/>
-          </v-col>
-        </div>
-      </v-row>
+  <div class="v-col-12 pa-0">
+    <HomeCarousel/>
+  </div>
+  <v-spacer></v-spacer>
+  <div>
+    <div class="v-col-12 pa-0">
+      <Guild style="height: 50vh"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Family style="height: 50vh"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Politics style="height: 50vh"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Religion style="height: 50vh"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Merchants style="height: 50vh"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Bicolline style="height: 50vh"/>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">

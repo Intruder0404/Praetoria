@@ -7,7 +7,7 @@
         </div>
       </template>
       <template #body>
-        <div class="text-h5">
+        <div class="text-h5" hidden>
           {{ options.guilds[0].attribute_values.find(av => av.attribute.name === 'Description').value.value }}
         </div>
       </template>
