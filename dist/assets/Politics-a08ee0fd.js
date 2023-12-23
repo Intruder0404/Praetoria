@@ -1,1 +1,0 @@
-import{N as e,S as s,R as t}from"./index-9fc3fb31.js";const o={name:"Politics"},c={class:"d-flex w-100 flex-wrap"};function a(n,r,i,p,l,_){return t(),s("div",c," politics page ")}const d=e(o,[["render",a]]);export{d as default};

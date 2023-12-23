@@ -3,11 +3,11 @@
     <info-card :direction="'right'">
       <template #title>
         <div class="text-h1">
-          {{ options.guilds[0].name }}
+          Legion Praetoria
         </div>
       </template>
       <template #body>
-        <div class="text-h5" hidden>
+        <div class="text-h5">
           {{ options.guilds[0].attribute_values.find(av => av.attribute.name === 'Description').value.value }}
         </div>
       </template>

@@ -1,1 +1,0 @@
-import{N as e,S as o,R as c}from"./index-9fc3fb31.js";const n={name:"Bicolline"},s={class:"d-flex w-100 flex-wrap"};function t(a,l,r,i,p,_){return c(),o("div",s," bicolline page ")}const d=e(n,[["render",t]]);export{d as default};

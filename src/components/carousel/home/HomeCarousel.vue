@@ -1,5 +1,28 @@
 <template>
-  <v-carousel
+  <div class="bg d-flex flex-row justify-center align-center" style="height:100vh;">
+    <InfoCard>
+      <template #title>
+        <div class="text-h1">
+          Devenez un fucking badass
+        </div>
+      </template>
+      <template #body>
+        <div class="text-h5">
+          trouvez-vous que le monde sont des petite pisseuses?<br/>
+          trouvez-vous dans une situation ou tout les gens autour de vous on l'air des mauviette?
+        </div>
+        <div class="text-h4">
+          Ben devenez une recrue pour la Legion Praetoria.
+        </div>
+      </template>
+      <template #actions>
+        <v-btn size="large" style="background: rgba(76, 175, 80, 0.3)">Devenir une recrue aujourd'hui</v-btn>
+        <v-btn size="large" style="background: rgba(236,73,73,0.3)">En savoir plus</v-btn>
+      </template>
+    </InfoCard>
+  </div>
+
+<!--  <v-carousel
     style="height:100vh;"
     :show-arrows="false"
     hide-delimiters
@@ -44,7 +67,7 @@
         </template>
       </InfoCard>
     </v-overlay>
-  </v-carousel>
+  </v-carousel>-->
 </template>
 <style scoped>
 :deep(.v-overlay__scrim){
@@ -53,6 +76,10 @@
 }
 :deep(.v-overlay__content){
   width: 90%;
+}
+.bg{
+  background-image:url("/carousel/carousel2.jpg");
+  background-size: cover;
 }
 </style>
 <script lang="ts">
