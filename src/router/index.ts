@@ -3,7 +3,7 @@ import { createRouter, createWebHistory,RouteRecordRaw  } from 'vue-router'
 import { UserNavigator,AppBar,Footer } from "@/components";
 import { authStore } from "@/store/auth";
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {path: '/', redirect: '/home'},
   {
     path: '/home',
@@ -130,7 +130,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes: routes as unknown as RouteRecordRaw[],
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  },
 });
 
 router.beforeEach((to, from, next) => {

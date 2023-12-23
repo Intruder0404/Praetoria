@@ -2,7 +2,7 @@
   <div class="bg d-flex flex-row justify-center align-center" style="height:100vh;">
     <InfoCard>
       <template #title>
-        <div class="text-h1">
+        <div class="text-h1 text-wrap">
           Devenez un fucking badass
         </div>
       </template>
