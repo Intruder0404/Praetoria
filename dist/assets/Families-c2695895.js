@@ -1,1 +1,0 @@
-import{a as e,j as s,o as a}from"./index-c41011b8.js";const o={name:"Families"},t={class:"d-flex w-100 flex-wrap"};function c(n,r,i,l,p,_){return a(),s("div",t," families page ")}const m=e(o,[["render",c]]);export{m as default};

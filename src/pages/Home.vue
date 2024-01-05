@@ -1,6 +1,6 @@
 <template>
   <div class="v-col-12 pa-0">
-    <HomeCarousel :style="{'height': $vuetify.display.xs?'50vh':'100vh'}"/>
+    <HomeCarousel :style="{'height': $vuetify.display.xs?'100vh':'100vh'}"/>
   </div>
   <v-spacer></v-spacer>
   <div>
