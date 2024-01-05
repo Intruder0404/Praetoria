@@ -12,8 +12,7 @@
         </div>
       </template>
       <template #actions>
-        <v-btn size="large" style="background: rgba(76, 175, 80, 0.3)" :to="'/registration'">Ouvrez un compte</v-btn>
-        <v-btn size="large" style="background: rgba(236,73,73,0.3)" :to="'/Bicolline'">En savoir plus</v-btn>
+        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(236,73,73,0.3)" :to="'/Bicolline'">En savoir plus</v-btn>
       </template>
     </info-card>
   </div>
