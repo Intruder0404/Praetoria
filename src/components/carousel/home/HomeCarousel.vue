@@ -16,8 +16,8 @@
         </div>
       </template>
       <template #actions>
-        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(76, 175, 80, 0.3)">Devenir une recrue aujourd'hui</v-btn>
-        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(236,73,73,0.3)">En savoir plus</v-btn>
+        <v-btn :block="$vuetify.display.xs" class="pa-0 ma-0" size="large" style="background: rgba(76, 175, 80, 0.3)">Devenir une recrue aujourd'hui</v-btn><br/>
+        <v-btn :block="$vuetify.display.xs" class="pa-0 ma-0" size="large" style="background: rgba(236,73,73,0.3)">En savoir plus</v-btn>
       </template>
     </InfoCard>
   </v-container>
