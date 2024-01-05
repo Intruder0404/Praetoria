@@ -1,5 +1,5 @@
 <template>
-  <div class="bg w-100" :fluid="true">
+  <v-container class="bg pa-0 ma-0" :fluid="true">
     <info-card :direction="'right'">
       <template #title>
         <div class="text-h1">
@@ -7,16 +7,15 @@
         </div>
       </template>
       <template #body>
-        <div class="text-h5">
+        <div class="text-xs-h7 text-md-h4 text-lg-h5">
           REEEEEEEEEEEEEEEEEE RESPUBLICA!
         </div>
       </template>
       <template #actions>
-        <v-btn size="large" style="background: rgba(76, 175, 80, 0.3)" :to="'/registration'">Ouvrez un compte</v-btn>
-        <v-btn size="large" style="background: rgba(236,73,73,0.3)" :to="'/Politics'">En savoir plus</v-btn>
+        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(236,73,73,0.3)" :to="'/Politics'">En savoir plus</v-btn>
       </template>
     </info-card>
-  </div>
+  </v-container >
 </template>
 <style scoped>
 .bg {

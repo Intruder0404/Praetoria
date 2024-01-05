@@ -1,21 +1,22 @@
 <template>
-  <div class="bg w-100" :fluid="true">
+  <v-container class="bg pa-0 ma-0" :fluid="true">
     <InfoCard>
       <template #title>
-        <div class="text-h1">
+        <div class="text-xs-h7 text-md-h4 text-lg-h5">
           Familles
         </div>
       </template>
       <template #body>
         <v-card-text class="d-flex flex-wrap justify-space-around">
           <v-card
-            class="v-col-2" v-for="(family,idx) in options.families"
+            class="mt-4 v-col-sx-12 v-col-lg-2"
+            v-for="(family,idx) in options.families"
             :key="idx"
             color="primary"
-            style="height:300px"
             hover
           >
             <v-card-title
+              class="text-xs-h8 text-md-h3 text-lg-h4"
             >
               {{ family.name }}
             </v-card-title>
@@ -33,7 +34,7 @@
         </v-card-text>
       </template>
     </InfoCard>
-  </div>
+  </v-container>
 </template>
 <style scoped>
 .bg {

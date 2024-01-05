@@ -1,31 +1,31 @@
 <template>
   <div class="v-col-12 pa-0">
-    <HomeCarousel/>
+    <HomeCarousel :style="{'height': $vuetify.display.xs?'50vh':'100vh'}"/>
   </div>
   <v-spacer></v-spacer>
   <div>
     <div class="v-col-12 pa-0">
-      <Guild style="height: 50vh"/>
+      <Guild :style="{'height': $vuetify.display.xs?'50vh':'50vh'}"/>
     </div>
     <v-spacer></v-spacer>
     <div class="v-col-12 pa-0">
-      <Family style="height: 50vh"/>
+      <Family :style="{'height': $vuetify.display.xs?'auto':'50vh'}"/>
     </div>
     <v-spacer></v-spacer>
     <div class="v-col-12 pa-0">
-      <Politics style="height: 50vh"/>
+      <Politics :style="{'height': $vuetify.display.xs?'auto':'50vh'}"/>
     </div>
     <v-spacer></v-spacer>
     <div class="v-col-12 pa-0">
-      <Religion style="height: 50vh"/>
-    </div>
-    <v-spacer></v-spacer>
-    <div class="v-col-12 pa-0 ">
-      <Merchants style="height: 50vh"/>
+      <Religion :style="{'height': $vuetify.display.xs?'auto':'50vh'}"/>
     </div>
     <v-spacer></v-spacer>
     <div class="v-col-12 pa-0">
-      <Bicolline style="height: 50vh"/>
+      <Merchants :style="{'height': $vuetify.display.xs?'auto':'50vh'}"/>
+    </div>
+    <v-spacer></v-spacer>
+    <div class="v-col-12 pa-0">
+      <Bicolline :style="{'height': $vuetify.display.xs?'auto':'50vh'}"/>
     </div>
   </div>
 </template>

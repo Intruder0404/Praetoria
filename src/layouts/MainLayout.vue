@@ -8,7 +8,7 @@
       <v-main class="fill-height">
         <router-view :key="$route.fullPath" name="content"/>
       </v-main>
-      <router-view color="primary" style="position:absolute;bottom:0;width: 100%" name="footer"/>
+      <router-view v-if="$vuetify.display.smAndUp" color="primary" style="position:absolute;bottom:0;width: 100%" name="footer"/>
   </v-app>
 </template>
 <script lang="ts">
