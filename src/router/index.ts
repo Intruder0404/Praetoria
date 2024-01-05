@@ -136,14 +136,17 @@ const router = createRouter({
   },
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     if (authStore().isAuthenticated) {
       next();
       return;
     }
     next("/home");
-  } else {
+  } else if (!to.matched.some((record) => record.name))
+  {
+      next("/home");
+  }else{
     next();
   }
 });
