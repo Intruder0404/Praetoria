@@ -78,7 +78,7 @@
   width: 90%;
 }
 .bg{
-  background-image:url("/carousel/carousel2.jpg");
+  background-image:url("https://placehold.co/600x400");
   background-size: cover;
 }
 </style>

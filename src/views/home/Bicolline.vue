@@ -19,7 +19,7 @@
 </template>
 <style scoped>
 .bg {
-  background-image: url("/carousel/img_4.png");
+  background-image: url("https://placehold.co/600x400");
   background-size: cover;
 }
 </style>
