@@ -1,1 +1,0 @@
-import{y as n,aw as o,aB as r,B as l,aE as i,N as c,b as u}from"./index-80ebc5db.js";const m=n({fluid:{type:Boolean,default:!1},...o(),...r()},"VContainer"),C=l()({name:"VContainer",props:m(),setup(e,a){let{slots:s}=a;const{rtlClasses:t}=i();return c(()=>u(e.tag,{class:["v-container",{"v-container--fluid":e.fluid},t.value,e.class],style:e.style},s)),{}}});export{C as V};
