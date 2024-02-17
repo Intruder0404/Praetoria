@@ -64,7 +64,7 @@
     <v-spacer></v-spacer>
     <LanguageButton/>
     <ThemeButton/>
-    <v-menu open-on-hover :close-on-content-click="false">
+    <v-menu :open-on-hover="true" :close-on-content-click="false">
       <template v-slot:activator="{ props }">
         <v-btn
           v-bind="props"

@@ -11,6 +11,8 @@
           <v-toolbar flat color="primary">
             <v-toolbar-title>Administration</v-toolbar-title>
             <CreateDialog @closeCreate="closeDialog('create')" :isActive="dialog"/>
+            <AddAttributeDialog @closeCreate="closeDialog('add-attribute')" :isActive="dialogAddAttribute"/>
+            <RemoveAttributeDialog @closeCreate="closeDialog('remove-attribute')" :isActive="dialogRemoveAttribute"/>
             <DeleteDialog @closeCreate="closeDialog('delete')" :isActive="dialogDelete"/>
             <UpdateDialog @closeCreate="closeDialog('edit')" :editedItem="editedItem" :isActive="dialogUpdate"/>
           </v-toolbar>
@@ -31,7 +33,7 @@
               </td>
               <td :key="'user'+key" v-else-if="String(key) === 'user_id'">
                 {{
-                  newOptions.users.find(u => u.id === property).firstName + ' ' + newOptions.users.find(u => u.id === property).lastName
+                  newOptions.users.find(u => u.id == property).first_name + ' ' + newOptions.users.find(u => u.id === property).last_name
                 }}
               </td>
               <td :key="'active'+key" v-else-if="String(key) === 'isActive'">
@@ -65,6 +67,9 @@
                     newOptions.religions.find(f => f.id = Object(attribute_value).value.value) ? newOptions.religions.find(f => f.id = Object(attribute_value).value.value).name : ''
                   }}
                 </template>
+<!--                <template v-if="Object(attribute_value).attribute.name === 'Population'">
+                  {{newOptions.users.filter(u=>u.attribute_values.find(uav=>uav.attribute.name === 'Family'&&uav.value.value == item.id)).length}}
+                </template>-->
                 <template v-else>
                   {{ Object(attribute_value).value.value }}
                 </template>
@@ -102,16 +107,19 @@
 <script lang="ts">
 import {mapState} from "pinia";
 import CreateDialog from "@/components/dialog/admin/CreateDialog.vue";
+import AddAttributeDialog from "@/components/dialog/admin/AddAttributeDialog.vue";
+import RemoveAttributeDialog from "@/components/dialog/admin/RemoveAttributeDialog.vue";
 import DeleteDialog from "@/components/dialog/admin/DeleteDialog.vue";
 import UpdateDialog from "@/components/dialog/admin/UpdateDialog.vue";
 import {optionsStore} from "@/store/options";
 import {defineComponent} from "vue";
-import {User} from '@/models/User/User'
 
 export default defineComponent({
   name: "admin",
   components: {
     CreateDialog,
+    AddAttributeDialog,
+    RemoveAttributeDialog,
     DeleteDialog,
     UpdateDialog
   },
@@ -119,6 +127,8 @@ export default defineComponent({
     return {
       dialogDelete: false,
       dialogUpdate: false,
+      dialogAddAttribute: false,
+      dialogRemoveAttribute: false,
       editedIndex: null,
       editedItem: {},
       dialog: false,
@@ -140,6 +150,12 @@ export default defineComponent({
         case 'edit':
           this.dialogUpdate = false;
           break;
+        case 'add-attribute':
+          this.dialogAddAttribute = false;
+          break;
+        case 'remove-attribute':
+          this.dialogRemoveAttribute = false;
+          break;
       }
     },
     editItem(item) {
@@ -152,7 +168,7 @@ export default defineComponent({
       this.editedIndex = this.newOptions[this.name].indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialogDelete = true;
-    },
+    }
   },
   computed: {
     ...mapState(optionsStore, ["options", 'optionLoading']),

@@ -1,18 +1,19 @@
 <template>
-  <v-footer class="bg-grey-lighten-1" >
-    <v-row justify="center" no-gutters>
+  <v-footer color="secondary" absolute inset app class="bg-grey-lighten-1" >
+    <v-row justify="center" :no-gutters="true">
       <v-btn
         v-for="link in links"
-        :key="link"
-        color="white"
+        :key="link.name"
         variant="text"
         class="mx-2"
         rounded="xl"
+        elevation="0"
+        :to="{ name: link.route }"
       >
-        {{ link }}
+        {{ link.name }}
       </v-btn>
       <v-col class="text-center mt-4" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Praetoria</strong>
       </v-col>
     </v-row>
   </v-footer>
@@ -21,12 +22,10 @@
 export default {
   data: () => ({
     links: [
-      'Home',
-      'About Us',
-      'Team',
-      'Services',
-      'Blog',
-      'Contact Us',
+      {name:'Home',route:'home'},
+      {name:'About Us',route:'home'},
+      {name:'Team',route:'home'},
+      {name:'Contact Us',route:'home'},
     ],
   }),
 }

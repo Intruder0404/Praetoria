@@ -34,6 +34,7 @@ export default defineConfig({
     ],
   },
   server: {
-    port: 3000,
+    port: 80,
+    host:'praetoria.api.ca',
   },
 })

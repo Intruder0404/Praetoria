@@ -68,7 +68,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: false },
   },
   {
-    path: '/Guild',
+    path: '/guild',
     name: 'guild',
     components: {
       AppBar,
@@ -78,7 +78,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: false },
   },
   {
-    path: '/Families',
+    path: '/families',
     name: 'families',
     components: {
       AppBar,
@@ -88,7 +88,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: false },
   },
   {
-    path: '/Religions',
+    path: '/religions',
     name: 'religions',
     components: {
       AppBar,
@@ -98,7 +98,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: false },
   },
   {
-    path: '/Politics',
+    path: '/politics',
     name: 'politics',
     components: {
       AppBar,
@@ -108,7 +108,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: { requiresAuth: false },
   },
   {
-    path: '/Merchants',
+    path: '/merchants',
     name: 'merchants',
     components: {
       AppBar,

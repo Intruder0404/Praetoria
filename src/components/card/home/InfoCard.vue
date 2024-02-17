@@ -10,12 +10,11 @@
 
       </slot>
     </v-card-text>
-    <v-card-actions :class="'text-'+direction">
+    <v-card-actions :class="'pa-10 text-'+direction">
       <v-row :justify="direction==='left'?'start':'end'">
         <slot name="actions">
 
         </slot>
-
       </v-row>
     </v-card-actions>
   </v-card>

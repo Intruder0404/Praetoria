@@ -1,6 +1,5 @@
 <template>
   <v-navigation-drawer
-    expand-on-hover
   >
     <v-list>
       <v-list-item
@@ -34,7 +33,7 @@
         <v-list-item prepend-icon="mdi-human-male" title="Attributes" :to="{ name: 'admin', params:{ name: 'attributes' }}"/>
         <v-list-item prepend-icon="mdi-human-male" title="Data Types" :to="{ name: 'admin', params:{ name: 'data_type' }}"/>
       </v-list-group>
-      <v-list-item v-if="this.isAuthenticated" prepend-icon="mdi-logout" title="Logout" @click="submit"></v-list-item>
+      <v-list-item v-if="isAuthenticated" prepend-icon="mdi-logout" title="Logout" @click="submit"></v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>

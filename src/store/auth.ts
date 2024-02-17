@@ -32,9 +32,10 @@ export const authStore = defineStore('auth', {
       await axios.post('auth/login', {
         ...loginData
       })
-        .then((response:ILoginResponse) => {
-          this.user = response.data.user;
-          this.accessToken = response.data.token;
+        .then((response:any) => {
+          this.user = response.data.data.user;
+          console.log(response.data.data.user);
+          this.accessToken = response.data.data.token;
           this.error = null;
           this.loading = false;
         })

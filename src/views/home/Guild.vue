@@ -13,7 +13,7 @@
       </template>
       <template #actions>
         <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(76, 175, 80, 0.3)" :to="'/registration'">Ouvrez un compte</v-btn>
-        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(236,73,73,0.3)" :to="'/Guild'">En savoir plus</v-btn>
+        <v-btn :block="$vuetify.display.xs" size="large" style="background: rgba(236,73,73,0.3)" :to="'/guild'">En savoir plus</v-btn>
       </template>
     </info-card>
   </v-container>
