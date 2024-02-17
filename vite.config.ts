@@ -36,5 +36,12 @@ export default defineConfig({
   server: {
     port: 80,
     host:'praetoria.api.ca',
+    proxy:{
+      '/api':{
+        target:'http://praetoria.api.ca',
+        changeOrigin: true,
+        rewrite:(path) => path.replace(/^\/api/,'')
+      }
+    }
   },
 })
